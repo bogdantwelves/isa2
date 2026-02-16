@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Blazor/Blazor.csproj" />
+  <Project Path="ToDo/ToDo.csproj" />
+</Solution>
