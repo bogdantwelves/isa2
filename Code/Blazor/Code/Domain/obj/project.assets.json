@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "Abc.Aids/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Abc.Aids.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Abc.Aids.dll": {}
+        }
+      },
+      "Abc.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Abc.Aids": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Abc.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Abc.Data.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Abc.Aids/1.0.0": {
+      "type": "project",
+      "path": "../Aids/Aids.csproj",
+      "msbuildProject": "../Aids/Aids.csproj"
+    },
+    "Abc.Data/1.0.0": {
+      "type": "project",
+      "path": "../Data/Data.csproj",
+      "msbuildProject": "../Data/Data.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "Abc.Data >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/bogdantwelve/.nuget/packages/": {}
@@ -32,7 +69,11 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Data/Data.csproj": {
+              "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Data/Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

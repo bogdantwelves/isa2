@@ -1,0 +1,10 @@
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Server/obj/Debug/net10.0/EmbeddedAttribute.cs
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Server/obj/Debug/net10.0/ValidatableTypeAttribute.cs
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Server/obj/Debug/net10.0/Movie.csproj.AssemblyReference.cache
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Server/obj/Debug/net10.0/rpswa.dswa.cache.json
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Server/obj/Debug/net10.0/Movie.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Server/obj/Debug/net10.0/Movie.AssemblyInfoInputs.cache
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Server/obj/Debug/net10.0/Movie.AssemblyInfo.cs
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Server/obj/Debug/net10.0/Movie.csproj.CoreCompileInputs.cache
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Server/obj/Debug/net10.0/Movie.MvcApplicationPartsAssemblyInfo.cache
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Server/obj/Debug/net10.0/Movie.sourcelink.json
