@@ -1,0 +1,110 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Abc.Infra/1.0.0": {
+        "dependencies": {
+          "Abc.Domain": "1.0.0",
+          "Abc.Aids.Reference": "1.0.0.0",
+          "Abc.Data.Reference": "1.0.0.0",
+          "Abc.Domain.Reference": "1.0.0.0"
+        },
+        "runtime": {
+          "Abc.Infra.dll": {}
+        }
+      },
+      "Abc.Aids/1.0.0": {
+        "runtime": {
+          "Abc.Aids.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Abc.Data/1.0.0": {
+        "dependencies": {
+          "Abc.Aids": "1.0.0"
+        },
+        "runtime": {
+          "Abc.Data.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Abc.Domain/1.0.0": {
+        "dependencies": {
+          "Abc.Data": "1.0.0"
+        },
+        "runtime": {
+          "Abc.Domain.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Abc.Aids.Reference/1.0.0.0": {
+        "runtime": {
+          "Abc.Aids.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Abc.Data.Reference/1.0.0.0": {
+        "runtime": {
+          "Abc.Data.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Abc.Domain.Reference/1.0.0.0": {
+        "runtime": {
+          "Abc.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Abc.Infra/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Abc.Aids/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Abc.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Abc.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Abc.Aids.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Abc.Data.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Abc.Domain.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

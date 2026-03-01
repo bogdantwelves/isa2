@@ -1,0 +1,12 @@
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/bin/Debug/net10.0/Abc.Aids.deps.json
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/bin/Debug/net10.0/Abc.Aids.dll
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/bin/Debug/net10.0/Abc.Aids.pdb
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/obj/Debug/net10.0/Aids.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/obj/Debug/net10.0/Aids.AssemblyInfoInputs.cache
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/obj/Debug/net10.0/Aids.AssemblyInfo.cs
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/obj/Debug/net10.0/Aids.csproj.CoreCompileInputs.cache
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/obj/Debug/net10.0/Aids.sourcelink.json
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/obj/Debug/net10.0/Abc.Aids.dll
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/obj/Debug/net10.0/refint/Abc.Aids.dll
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/obj/Debug/net10.0/Abc.Aids.pdb
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/obj/Debug/net10.0/ref/Abc.Aids.dll
