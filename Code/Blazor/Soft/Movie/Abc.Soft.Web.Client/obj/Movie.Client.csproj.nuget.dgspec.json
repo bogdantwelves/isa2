@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Client/Movie.Client.csproj": {}
+    "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web.Client/Movie.Client.csproj": {}
   },
   "projects": {
-    "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Client/Movie.Client.csproj": {
+    "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web.Client/Movie.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Client/Movie.Client.csproj",
+        "projectUniqueName": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web.Client/Movie.Client.csproj",
         "projectName": "Movie.Client",
-        "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Client/Movie.Client.csproj",
+        "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web.Client/Movie.Client.csproj",
         "packagesPath": "/Users/bogdantwelve/.nuget/packages/",
-        "outputPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Client/obj/",
+        "outputPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web.Client/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/bogdantwelve/.nuget/NuGet/NuGet.Config"

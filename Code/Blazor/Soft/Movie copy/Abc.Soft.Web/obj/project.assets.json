@@ -2827,11 +2827,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/Abc.Soft.Web.csproj",
+      "projectUniqueName": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie copy/Abc.Soft.Web/Abc.Soft.Web.csproj",
       "projectName": "Abc.Soft.Web",
-      "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/Abc.Soft.Web.csproj",
+      "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie copy/Abc.Soft.Web/Abc.Soft.Web.csproj",
       "packagesPath": "/Users/bogdantwelve/.nuget/packages/",
-      "outputPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/",
+      "outputPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie copy/Abc.Soft.Web/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/bogdantwelve/.nuget/NuGet/NuGet.Config"
@@ -2847,8 +2847,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web.Client/Abc.Soft.Web.Client.csproj": {
-              "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web.Client/Abc.Soft.Web.Client.csproj"
+            "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie copy/Abc.Soft.Web.Client/Abc.Soft.Web.Client.csproj": {
+              "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie copy/Abc.Soft.Web.Client/Abc.Soft.Web.Client.csproj"
             }
           }
         }
