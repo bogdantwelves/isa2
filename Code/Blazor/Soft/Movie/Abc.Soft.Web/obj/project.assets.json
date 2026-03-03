@@ -968,10 +968,86 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
+      "Abc.Aids/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Abc.Aids.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Abc.Aids.dll": {}
+        }
+      },
+      "Abc.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Abc.Aids": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Abc.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Abc.Data.dll": {}
+        }
+      },
+      "Abc.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Abc.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Abc.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Abc.Domain.dll": {}
+        }
+      },
+      "Abc.Infra/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Abc.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Abc.Infra.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Abc.Infra.dll": {}
+        }
+      },
+      "Abc.Jobs/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Abc.Infra": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Abc.Jobs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Abc.Jobs.dll": {}
+        }
+      },
+      "Abc.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Abc.Jobs": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Abc.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Abc.Shared.dll": {}
+        }
+      },
       "Abc.Soft.Web.Client/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "Abc.Shared": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "10.0.2",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "10.0.2",
           "Microsoft.DotNet.HotReload.WebAssembly.Browser": "10.0.102"
@@ -2802,6 +2878,36 @@
         "system.composition.typedparts.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Abc.Aids/1.0.0": {
+      "type": "project",
+      "path": "../../../Code/Aids/Aids.csproj",
+      "msbuildProject": "../../../Code/Aids/Aids.csproj"
+    },
+    "Abc.Data/1.0.0": {
+      "type": "project",
+      "path": "../../../Code/Data/Data.csproj",
+      "msbuildProject": "../../../Code/Data/Data.csproj"
+    },
+    "Abc.Domain/1.0.0": {
+      "type": "project",
+      "path": "../../../Code/Domain/Domain.csproj",
+      "msbuildProject": "../../../Code/Domain/Domain.csproj"
+    },
+    "Abc.Infra/1.0.0": {
+      "type": "project",
+      "path": "../../../Code/Infra/Infra.csproj",
+      "msbuildProject": "../../../Code/Infra/Infra.csproj"
+    },
+    "Abc.Jobs/1.0.0": {
+      "type": "project",
+      "path": "../../../Code/Jobs/Jobs.csproj",
+      "msbuildProject": "../../../Code/Jobs/Jobs.csproj"
+    },
+    "Abc.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../../Code/Shared/Shared.csproj",
+      "msbuildProject": "../../../Code/Shared/Shared.csproj"
     },
     "Abc.Soft.Web.Client/1.0.0": {
       "type": "project",

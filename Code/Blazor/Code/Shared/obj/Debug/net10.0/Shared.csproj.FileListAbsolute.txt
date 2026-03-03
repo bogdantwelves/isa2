@@ -25,13 +25,10 @@
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/rjimswa.dswa.cache.json
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
-/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/scopedcss/Components/Component1.razor.rz.scp.css
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/scopedcss/Components/MyNavLink.razor.rz.scp.css
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/scopedcss/bundle/Abc.Shared.styles.css
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/scopedcss/projectbundle/Abc.Shared.bundle.scp.css
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/compressed/j4rr02ik7x-{0}-luzdqbu196-luzdqbu196.gz
-/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/compressed/kmdzzlrzqm-{0}-lq9z6ccqhg-lq9z6ccqhg.gz
-/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/compressed/kk8z6b8yqy-{0}-lq9z6ccqhg-lq9z6ccqhg.gz
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/staticwebassets.build.json
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/staticwebassets.build.json.cache
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/staticwebassets.development.json
@@ -48,3 +45,5 @@
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/refint/Abc.Shared.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/Abc.Shared.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/ref/Abc.Shared.dll
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/compressed/kmdzzlrzqm-{0}-1qkkcp3qit-1qkkcp3qit.gz
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/compressed/kk8z6b8yqy-{0}-1qkkcp3qit-1qkkcp3qit.gz
