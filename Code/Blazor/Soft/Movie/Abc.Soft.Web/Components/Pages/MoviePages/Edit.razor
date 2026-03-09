@@ -2,7 +2,7 @@
 @attribute [ExcludeFromInteractiveRouting]
 @using Abc.Soft.Web.Data
 @using Microsoft.EntityFrameworkCore
-@using Abc.Soft.Web.Model
+@using Abc.Data
 @inject IDbContextFactory<ApplicationDbContext> DbFactory
 @inject NavigationManager NavigationManager
 
@@ -12,40 +12,51 @@
 
 <h2>Movie</h2>
 <hr />
-@if (Movie is null)
+@if (movie is null)  // Изменено
 {
     <p><em>Loading...</em></p>
 }
+// ...existing code...
 else
 {
     <div class="row">
         <div class="col-md-4">
-            <EditForm method="post" Model="Movie" OnValidSubmit="UpdateMovie" FormName="edit" Enhance>
-                <DataAnnotationsValidator />
-                <ValidationSummary role="alert"/>
-                <input type="hidden" name="Movie.Id" value="@Movie.Id" />
-                <div class="mb-3">
-                    <label for="title" class="form-label">Title:</label>
-                    <InputText id="title" @bind-Value="Movie.Title" class="form-control" />
-                    <ValidationMessage For="() => Movie.Title" class="text-danger" />
-                </div>
-                <div class="mb-3">
-                    <label for="releasedate" class="form-label">ReleaseDate:</label>
-                    <InputDate id="releasedate" @bind-Value="Movie.ReleaseDate" class="form-control" />
-                    <ValidationMessage For="() => Movie.ReleaseDate" class="text-danger" />
-                </div>
-                <div class="mb-3">
-                    <label for="genre" class="form-label">Genre:</label>
-                    <InputText id="genre" @bind-Value="Movie.Genre" class="form-control" />
-                    <ValidationMessage For="() => Movie.Genre" class="text-danger" />
-                </div>
-                <div class="mb-3">
-                    <label for="price" class="form-label">Price:</label>
-                    <InputNumber id="price" @bind-Value="Movie.Price" class="form-control" />
-                    <ValidationMessage For="() => Movie.Price" class="text-danger" />
-                </div>
-                <button type="submit" class="btn btn-primary">Save</button>
-            </EditForm>
+            <EditForm Model="@movie" OnValidSubmit="UpdateMovie" FormName="editForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <input type="hidden" name="movie.Id" value="@movie.Id" />
+
+    <MyEditItem Id="title"
+                TValue="string"
+                Label="Title"
+                Value="@movie.Title"
+                ValueChanged="@(v => { movie.Title = v; return Task.CompletedTask; })"
+                ValueExpression="@(() => movie.Title)" />
+
+    <MyEditItem Id="releaseDate"
+                TValue="DateOnly"
+                Label="Release Date"
+                Value="@movie.ReleaseDate"
+                ValueChanged="@(v => { movie.ReleaseDate = v; return Task.CompletedTask; })"
+                ValueExpression="@(() => movie.ReleaseDate)" />
+
+    <MyEditItem Id="genre"
+                TValue="string"
+                Label="Genre"
+                Value="@movie.Genre"
+                ValueChanged="@(v => { movie.Genre = v; return Task.CompletedTask; })"
+                ValueExpression="@(() => movie.Genre)" />
+
+    <MyEditItem Id="price"
+                TValue="decimal"
+                Label="Price"
+                Value="@movie.Price"
+                ValueChanged="@(v => { movie.Price = v; return Task.CompletedTask; })"
+                ValueExpression="@(() => movie.Price)" />
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</EditForm>
         </div>
     </div>
 }
@@ -59,14 +70,14 @@ else
     private int Id { get; set; }
 
     [SupplyParameterFromForm]
-    private Movie? Movie { get; set; }
+    private Movie movie { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         using var context = DbFactory.CreateDbContext();
-        Movie ??= await context.Movie.FirstOrDefaultAsync(m => m.Id == Id);
+        movie ??= await context.Movie.FirstOrDefaultAsync(m => m.Id == Id);
 
-        if (Movie is null)
+        if (movie is null)
         {
             NavigationManager.NotFound();
         }
@@ -77,7 +88,7 @@ else
     private async Task UpdateMovie()
     {
         using var context = DbFactory.CreateDbContext();
-        context.Attach(Movie!).State = EntityState.Modified;
+        context.Attach(movie!).State = EntityState.Modified;
 
         try
         {
@@ -85,7 +96,7 @@ else
         }
         catch (DbUpdateConcurrencyException)
         {
-            if (!MovieExists(Movie!.Id))
+            if (!MovieExists(movie!.Id))
             {
                 NavigationManager.NotFound();
             }
@@ -103,4 +114,6 @@ else
         using var context = DbFactory.CreateDbContext();
         return context.Movie.Any(e => e.Id == id);
     }
+
+    
 }

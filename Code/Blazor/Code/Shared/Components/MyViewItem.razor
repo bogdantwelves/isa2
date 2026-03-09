@@ -1,5 +1,4 @@
-﻿<h3>MyViewItem</h3>
-
+﻿
 <dl class="row">
     <dt class="col-sm-2">@Label</dt>
     <dd class="col-sm-10">@Value</dd>
@@ -7,6 +6,6 @@
 
 @code {
     [Parameter] public string Label { get; set; } = string.Empty;
-    [Parameter] public object? Value { get; set; }
+    [Parameter] public string Value { get; set; }
 }
 

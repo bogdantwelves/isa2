@@ -1,0 +1,10 @@
+/Users/bogdantwelve/isa2projects/isa2/ToDo/obj/Debug/net10.0/EmbeddedAttribute.cs
+/Users/bogdantwelve/isa2projects/isa2/ToDo/obj/Debug/net10.0/ValidatableTypeAttribute.cs
+/Users/bogdantwelve/isa2projects/isa2/ToDo/obj/Debug/net10.0/ToDo.csproj.AssemblyReference.cache
+/Users/bogdantwelve/isa2projects/isa2/ToDo/obj/Debug/net10.0/rpswa.dswa.cache.json
+/Users/bogdantwelve/isa2projects/isa2/ToDo/obj/Debug/net10.0/ToDo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bogdantwelve/isa2projects/isa2/ToDo/obj/Debug/net10.0/ToDo.AssemblyInfoInputs.cache
+/Users/bogdantwelve/isa2projects/isa2/ToDo/obj/Debug/net10.0/ToDo.AssemblyInfo.cs
+/Users/bogdantwelve/isa2projects/isa2/ToDo/obj/Debug/net10.0/ToDo.csproj.CoreCompileInputs.cache
+/Users/bogdantwelve/isa2projects/isa2/ToDo/obj/Debug/net10.0/ToDo.MvcApplicationPartsAssemblyInfo.cache
+/Users/bogdantwelve/isa2projects/isa2/ToDo/obj/Debug/net10.0/ToDo.sourcelink.json

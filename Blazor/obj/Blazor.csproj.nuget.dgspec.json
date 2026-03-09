@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bogdantwelve/RiderProjects/isa2/Blazor/Blazor.csproj": {}
+    "/Users/bogdantwelve/isa2projects/isa2/Blazor/Blazor.csproj": {}
   },
   "projects": {
-    "/Users/bogdantwelve/RiderProjects/isa2/Blazor/Blazor.csproj": {
+    "/Users/bogdantwelve/isa2projects/isa2/Blazor/Blazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bogdantwelve/RiderProjects/isa2/Blazor/Blazor.csproj",
+        "projectUniqueName": "/Users/bogdantwelve/isa2projects/isa2/Blazor/Blazor.csproj",
         "projectName": "Blazor",
-        "projectPath": "/Users/bogdantwelve/RiderProjects/isa2/Blazor/Blazor.csproj",
+        "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Blazor/Blazor.csproj",
         "packagesPath": "/Users/bogdantwelve/.nuget/packages/",
-        "outputPath": "/Users/bogdantwelve/RiderProjects/isa2/Blazor/obj/",
+        "outputPath": "/Users/bogdantwelve/isa2projects/isa2/Blazor/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/bogdantwelve/.nuget/NuGet/NuGet.Config"

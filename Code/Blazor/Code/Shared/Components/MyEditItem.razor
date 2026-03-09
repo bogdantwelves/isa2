@@ -1,5 +1,34 @@
-﻿<h3>MyEditItem</h3>
+﻿@using System.Linq.Expressions
+@typeparam TValue
+
+<div class="mb-3">
+    <label for="@Id" class="form-label">@Label</label>
+    @if (IsString) {
+        <InputText id="@Id" class="form-control" Value="@StringValue" 
+           ValueChanged="@OnStringValueChanged" ValueExpression="@StringValueExpression" />
+    } else if (IsDate) {
+        <InputDate TValue="TValue" id="@Id" class="form-control" Value="@Value" 
+            ValueChanged="@ValueChanged" ValueExpression="@ValueExpression" />
+    } else {
+        <InputNumber TValue="TValue" id="@Id" class="form-control" Value="@Value" 
+            ValueChanged="@ValueChanged" ValueExpression="@ValueExpression" />
+    }
+    <ValidationMessage For="@ValueExpression" class="text-danger" />
+</div>
 
 @code {
-
+    [Parameter] public string Id { get; set; } = string.Empty;
+    [Parameter] public string Label { get; set; } = string.Empty;
+    [Parameter] public TValue Value { get; set; }
+    [Parameter] public EventCallback<TValue> ValueChanged { get; set; }
+    [Parameter] public Expression<Func<TValue>> ValueExpression { get; set; }
+    private static Type UnderlyingType => Nullable.GetUnderlyingType(typeof(TValue)) ?? typeof(TValue);
+    private static bool IsString => UnderlyingType == typeof(string);
+    private static bool IsDate => UnderlyingType == typeof(DateTime) || UnderlyingType == typeof(DateOnly);
+    private string StringValue => Value as string;
+    private Task OnStringValueChanged(string value) {
+        return ValueChanged.InvokeAsync((TValue)(object)value);
+    }
+    private Task OnDateValueChanged(DateOnly value) => ValueChanged.InvokeAsync((TValue)(object)value);
+    private Expression<Func<string>> StringValueExpression => ValueExpression as Expression<Func<string>>;
 }

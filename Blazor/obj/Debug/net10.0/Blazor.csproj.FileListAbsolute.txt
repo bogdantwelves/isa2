@@ -1,0 +1,12 @@
+/Users/bogdantwelve/isa2projects/isa2/Blazor/bin/Debug/net10.0/Blazor.deps.json
+/Users/bogdantwelve/isa2projects/isa2/Blazor/bin/Debug/net10.0/Blazor.dll
+/Users/bogdantwelve/isa2projects/isa2/Blazor/bin/Debug/net10.0/Blazor.pdb
+/Users/bogdantwelve/isa2projects/isa2/Blazor/obj/Debug/net10.0/Blazor.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bogdantwelve/isa2projects/isa2/Blazor/obj/Debug/net10.0/Blazor.AssemblyInfoInputs.cache
+/Users/bogdantwelve/isa2projects/isa2/Blazor/obj/Debug/net10.0/Blazor.AssemblyInfo.cs
+/Users/bogdantwelve/isa2projects/isa2/Blazor/obj/Debug/net10.0/Blazor.csproj.CoreCompileInputs.cache
+/Users/bogdantwelve/isa2projects/isa2/Blazor/obj/Debug/net10.0/Blazor.sourcelink.json
+/Users/bogdantwelve/isa2projects/isa2/Blazor/obj/Debug/net10.0/Blazor.dll
+/Users/bogdantwelve/isa2projects/isa2/Blazor/obj/Debug/net10.0/refint/Blazor.dll
+/Users/bogdantwelve/isa2projects/isa2/Blazor/obj/Debug/net10.0/Blazor.pdb
+/Users/bogdantwelve/isa2projects/isa2/Blazor/obj/Debug/net10.0/ref/Blazor.dll

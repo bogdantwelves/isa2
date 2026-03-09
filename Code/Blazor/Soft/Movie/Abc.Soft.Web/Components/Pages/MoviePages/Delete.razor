@@ -1,8 +1,9 @@
 @page "/movies/delete"
 @attribute [ExcludeFromInteractiveRouting]
-@using Abc.Soft.Web.Data
 @using Microsoft.EntityFrameworkCore
-@using Abc.Soft.Web.Model
+@using Abc.Data
+@using Abc.Soft.Web.Data
+
 @inject IDbContextFactory<ApplicationDbContext> DbFactory
 @inject NavigationManager NavigationManager
 
@@ -20,9 +21,9 @@
     }
     else {
         <MyViewItem Label="Title" Value="@movie.Title" />
-        <MyViewItem Label="Release Date" Value="@movie.ReleaseDate" />
+        <MyViewItem Label="Release Date" Value="@movie.ReleaseDate.ToString()" />
         <MyViewItem Label="Genre" Value="@movie.Genre" />
-        <MyViewItem Label="Price" Value="@movie.Price" />
+        <MyViewItem Label="Price" Value="@movie.Price.ToString()" />
         <EditForm method="post" Model="movie" OnValidSubmit="DeleteMovie" FormName="delete" Enhance>
             <button type="submit" class="btn btn-danger" disabled="@(movie is null)">Delete</button> |
             <a href="/movies">Back to List</a>
@@ -31,7 +32,7 @@
 </div>
 
 @code {
-    private Movie? movie;
+    private Movie movie;
     [SupplyParameterFromQuery]
     private int Id { get; set; }
     protected override async Task OnInitializedAsync()

@@ -1,8 +1,9 @@
 @page "/movies/create"
 @attribute [ExcludeFromInteractiveRouting]
-@using Abc.Soft.Web.Data
 @using Microsoft.EntityFrameworkCore
-@using Abc.Soft.Web.Model
+@using Abc.Data
+@using Abc.Soft.Web.Data
+
 @inject IDbContextFactory<ApplicationDbContext> DbFactory
 @inject NavigationManager NavigationManager
 
