@@ -9,9 +9,11 @@
       "Abc.Tests.Data/1.0.0": {
         "dependencies": {
           "Abc.Data": "1.0.0",
+          "Abc.Tests.Aids": "1.0.0",
           "MSTest": "4.0.1",
           "Abc.Aids.Reference": "1.0.0.0",
           "Abc.Data.Reference": "1.0.0.0",
+          "Abc.Tests.Aids.Reference": "1.0.0.0",
           "MSTest.TestFramework.Extensions": "4.0.1.0"
         },
         "runtime": {
@@ -1017,6 +1019,60 @@
           }
         }
       },
+      "Abc.Tests.Aids/1.0.0": {
+        "dependencies": {
+          "Abc.Aids": "1.0.0",
+          "MSTest.TestAdapter": "4.0.1",
+          "MSTest.TestFramework": "4.0.1",
+          "Microsoft.NET.Test.Sdk": "18.0.0"
+        },
+        "runtime": {
+          "Abc.Tests.Aids.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        },
+        "resources": {
+          "zh-Hans/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "zh-Hant/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "zh-Hant"
+          },
+          "pl/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "pl"
+          },
+          "ja/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "ja"
+          },
+          "it/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "it"
+          },
+          "cs/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "cs"
+          },
+          "ru/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "ru"
+          },
+          "pt-BR/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "de/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "de"
+          },
+          "ko/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "ko"
+          },
+          "fr/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "fr"
+          },
+          "es/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "es"
+          },
+          "tr/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "tr"
+          }
+        }
+      },
       "Abc.Aids.Reference/1.0.0.0": {
         "runtime": {
           "Abc.Aids.dll": {
@@ -1033,11 +1089,68 @@
           }
         }
       },
+      "Abc.Tests.Aids.Reference/1.0.0.0": {
+        "runtime": {
+          "Abc.Tests.Aids.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "MSTest.TestFramework.Extensions/4.0.1.0": {
         "runtime": {
           "MSTest.TestFramework.Extensions.dll": {
             "assemblyVersion": "4.0.1.0",
             "fileVersion": "4.0.125.51406"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.TestPlatform.TestFramework/14.0.0.0": {
+        "runtime": {
+          "Microsoft.VisualStudio.TestPlatform.TestFramework.dll": {
+            "assemblyVersion": "14.0.0.0",
+            "fileVersion": "3.100.123.36306"
+          }
+        },
+        "resources": {
+          "zh-Hans/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "zh-Hant/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "zh-Hant"
+          },
+          "pl/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "pl"
+          },
+          "ja/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "ja"
+          },
+          "it/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "it"
+          },
+          "cs/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "cs"
+          },
+          "ru/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "ru"
+          },
+          "pt-BR/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "de/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "de"
+          },
+          "ko/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "ko"
+          },
+          "fr/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "fr"
+          },
+          "es/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "es"
+          },
+          "tr/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll": {
+            "locale": "tr"
           }
         }
       }
@@ -1185,6 +1298,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Abc.Tests.Aids/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Abc.Aids.Reference/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -1195,7 +1313,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Abc.Tests.Aids.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "MSTest.TestFramework.Extensions/4.0.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.VisualStudio.TestPlatform.TestFramework/14.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

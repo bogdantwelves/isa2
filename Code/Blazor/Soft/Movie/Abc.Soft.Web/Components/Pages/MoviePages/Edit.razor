@@ -22,41 +22,33 @@ else
     <div class="row">
         <div class="col-md-4">
             <EditForm Model="@movie" OnValidSubmit="UpdateMovie" FormName="editForm">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+                <DataAnnotationsValidator />
+                <ValidationSummary />
 
-    <input type="hidden" name="movie.Id" value="@movie.Id" />
+                <input type="hidden" name="movie.Id" value="@movie.Id" />
 
-    <MyEditItem Id="title"
-                TValue="string"
-                Label="Title"
-                Value="@movie.Title"
-                ValueChanged="@(v => { movie.Title = v; return Task.CompletedTask; })"
-                ValueExpression="@(() => movie.Title)" />
+                 <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <InputText id="title" @bind-Value="movie.Title" class="form-control" />
+                </div>
 
-    <MyEditItem Id="releaseDate"
-                TValue="DateOnly"
-                Label="Release Date"
-                Value="@movie.ReleaseDate"
-                ValueChanged="@(v => { movie.ReleaseDate = v; return Task.CompletedTask; })"
-                ValueExpression="@(() => movie.ReleaseDate)" />
+                <div class="mb-3">
+                    <label for="releaseDate" class="form-label">Release Date</label>
+                    <InputDate id="releaseDate" @bind-Value="movie.ReleaseDate" class="form-control" />
+                </div>
 
-    <MyEditItem Id="genre"
-                TValue="string"
-                Label="Genre"
-                Value="@movie.Genre"
-                ValueChanged="@(v => { movie.Genre = v; return Task.CompletedTask; })"
-                ValueExpression="@(() => movie.Genre)" />
+                <div class="mb-3">
+                    <label for="genre" class="form-label">Genre</label>
+                    <InputText id="genre" @bind-Value="movie.Genre" class="form-control" />
+                </div>
 
-    <MyEditItem Id="price"
-                TValue="decimal"
-                Label="Price"
-                Value="@movie.Price"
-                ValueChanged="@(v => { movie.Price = v; return Task.CompletedTask; })"
-                ValueExpression="@(() => movie.Price)" />
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <InputNumber id="price" @bind-Value="movie.Price" class="form-control" />
+                </div> 
 
-    <button type="submit" class="btn btn-primary">Save</button>
-</EditForm>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </EditForm>
         </div>
     </div>
 }

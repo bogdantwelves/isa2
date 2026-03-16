@@ -20,10 +20,11 @@
         <p><em>Loading...</em></p>
     }
     else {
-        <MyViewItem Label="Title" Value="@movie.Title" />
+            <MyEntityViewer Entity="@movie"></MyEntityViewer>
+        @* <MyViewItem Label="Title" Value="@movie.Title" />
         <MyViewItem Label="Release Date" Value="@movie.ReleaseDate.ToString()" />
         <MyViewItem Label="Genre" Value="@movie.Genre" />
-        <MyViewItem Label="Price" Value="@movie.Price.ToString()" />
+        <MyViewItem Label="Price" Value="@movie.Price.ToString()" /> *@
         <EditForm method="post" Model="movie" OnValidSubmit="DeleteMovie" FormName="delete" Enhance>
             <button type="submit" class="btn btn-danger" disabled="@(movie is null)">Delete</button> |
             <a href="/movies">Back to List</a>

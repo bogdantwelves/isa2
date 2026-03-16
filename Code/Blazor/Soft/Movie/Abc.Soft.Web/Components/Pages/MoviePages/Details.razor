@@ -19,7 +19,8 @@
         <p><em>Loading...</em></p>
     }
     else {
-        <dl class="row">
+        <MyEntityViewer Entity="@movie"></MyEntityViewer>
+        @* <dl class="row">
             <dt class="col-sm-2">Title</dt>
             <dd class="col-sm-10">@movie.Title</dd>
             <dt class="col-sm-2">ReleaseDate</dt>
@@ -28,7 +29,7 @@
             <dd class="col-sm-10">@movie.Genre</dd>
             <dt class="col-sm-2">Price</dt>
             <dd class="col-sm-10">@movie.Price</dd>
-        </dl>
+        </dl> *@
         <div>
             <a href="@($"/movies/edit?id={movie.Id}")">Edit</a> |
             <a href="@($"/movies")">Back to List</a>
