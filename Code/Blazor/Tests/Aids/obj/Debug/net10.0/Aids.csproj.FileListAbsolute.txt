@@ -95,8 +95,10 @@
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Aids/bin/Debug/net10.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Aids/bin/Debug/net10.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Aids/bin/Debug/net10.0/Abc.Aids.dll
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Aids/bin/Debug/net10.0/Abc.Data.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Aids/bin/Debug/net10.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Aids/bin/Debug/net10.0/Abc.Aids.pdb
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Aids/bin/Debug/net10.0/Abc.Data.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Aids/bin/Debug/net10.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Aids/obj/Debug/net10.0/Aids.csproj.AssemblyReference.cache
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Aids/obj/Debug/net10.0/Aids.GeneratedMSBuildEditorConfig.editorconfig

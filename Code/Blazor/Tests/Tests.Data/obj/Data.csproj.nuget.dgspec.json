@@ -701,6 +701,9 @@
             "projectReferences": {
               "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/Aids.csproj": {
                 "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/Aids.csproj"
+              },
+              "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Data/Data.csproj": {
+                "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Data/Data.csproj"
               }
             }
           }

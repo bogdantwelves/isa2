@@ -367,6 +367,19 @@
         "runtime": {
           "bin/placeholder/Abc.Aids.dll": {}
         }
+      },
+      "Abc.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Abc.Aids": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Abc.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Abc.Data.dll": {}
+        }
       }
     }
   },
@@ -880,11 +893,17 @@
       "type": "project",
       "path": "../../Code/Aids/Aids.csproj",
       "msbuildProject": "../../Code/Aids/Aids.csproj"
+    },
+    "Abc.Data/1.0.0": {
+      "type": "project",
+      "path": "../../Code/Data/Data.csproj",
+      "msbuildProject": "../../Code/Data/Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
       "Abc.Aids >= 1.0.0",
+      "Abc.Data >= 1.0.0",
       "MSTest.TestAdapter >= 3.1.1",
       "MSTest.TestFramework >= 3.1.1",
       "Microsoft.NET.Test.Sdk >= 17.8.2"
@@ -918,6 +937,9 @@
           "projectReferences": {
             "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/Aids.csproj": {
               "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Aids/Aids.csproj"
+            },
+            "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Data/Data.csproj": {
+              "projectPath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Data/Data.csproj"
             }
           }
         }
