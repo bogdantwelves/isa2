@@ -1,0 +1,48 @@
+@page "/countries/delete"
+@attribute [ExcludeFromInteractiveRouting]
+@using Microsoft.EntityFrameworkCore
+@using Abc.Data
+@using Abc.Soft.Web.Data
+
+@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Delete Country</PageTitle>
+
+<h1>Delete</h1>
+
+<p>Are you sure you want to delete this?</p>
+<div>
+    <h2>Country</h2>
+    <hr />
+    @if (country is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <MyEntityViewer Entity="@country"></MyEntityViewer>
+        <EditForm method="post" Model="country" OnValidSubmit="DeleteCountry" FormName="delete" Enhance>
+            <button type="submit" class="btn btn-danger" disabled="@(country is null)">Delete</button> |
+            <a href="/countries">Back to List</a>
+        </EditForm>
+    }
+</div>
+
+@code {
+    private Country country;
+    [SupplyParameterFromQuery]
+    private Guid Id { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        country = await context.Countries.FirstOrDefaultAsync(c => c.Id == Id);
+        if (country is null)  NavigationManager.NotFound();
+    }
+    private async Task DeleteCountry()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Countries.Remove(country!);
+        await context.SaveChangesAsync();
+        NavigationManager.NavigateTo("/countries");
+    }
+}

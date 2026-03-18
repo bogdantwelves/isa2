@@ -20,13 +20,13 @@
             <ValidationSummary class="text-danger" role="alert"/>
             <div class="mb-3">
                 <label for="title" class="form-label">Title:</label> 
-                <InputText id="title" @bind-Value="Movie.Title" class="form-control" /> 
-                <ValidationMessage For="() => Movie.Title" class="text-danger" /> 
+                <InputText id="title" @bind-Value="Movie.Name" class="form-control" /> 
+                <ValidationMessage For="() => Movie.Name" class="text-danger" /> 
             </div>        
             <div class="mb-3">
                 <label for="releasedate" class="form-label">ReleaseDate:</label> 
-                <InputDate id="releasedate" @bind-Value="Movie.ReleaseDate" class="form-control" /> 
-                <ValidationMessage For="() => Movie.ReleaseDate" class="text-danger" /> 
+                <InputDate id="releasedate" @bind-Value="Movie.ValidFrom" class="form-control" /> 
+                <ValidationMessage For="() => Movie.ValidFrom" class="text-danger" /> 
             </div>        
             <div class="mb-3">
                 <label for="genre" class="form-label">Genre:</label> 

@@ -17,8 +17,8 @@
 </p>
 
 <QuickGrid Class="table" Items="context.Movie">
-    <PropertyColumn Property="movie => movie.Title" />
-    <PropertyColumn Property="movie => movie.ReleaseDate" />
+    <PropertyColumn Property="movie => movie.Name" />
+    <PropertyColumn Property="movie => movie.ValidFrom" />
     <PropertyColumn Property="movie => movie.Genre" />
     <PropertyColumn Property="movie => movie.Price" />
 
@@ -32,8 +32,7 @@
 @code {
     private ApplicationDbContext context = default!;
 
-    protected override void OnInitialized()
-    {
+    protected override void OnInitialized(){
         context = DbFactory.CreateDbContext();
     }
 

@@ -1,0 +1,46 @@
+@page "/countries/details"
+@attribute [ExcludeFromInteractiveRouting]
+@using Microsoft.EntityFrameworkCore
+@using Abc.Data
+@using Abc.Soft.Web.Data
+
+@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Details Country</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h2>Country</h2>
+    <hr />
+    @if (country is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <MyEntityViewer Entity="@country"></MyEntityViewer>
+        <div>
+            <a href="@($"/countries/edit?id={country.Id}")">Edit</a> |
+            <a href="@($"/countries")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    private Country country;
+
+    [SupplyParameterFromQuery]
+    private Guid Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        country = await context.Countries.FirstOrDefaultAsync(c => c.Id == Id);
+
+        if (country is null)
+        {
+            NavigationManager.NotFound();
+        }
+    }
+}

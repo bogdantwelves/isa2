@@ -1,6 +1,6 @@
 namespace Abc.Data.Common;
 
 public abstract class NamedEntity: DetailedEntity {
-    public string Name { get; set; } = "";
-    public string Code { get; set; } = "";
+    public virtual string Name { get; set; } = "";
+    public virtual string Code { get; set; } = "";
 }

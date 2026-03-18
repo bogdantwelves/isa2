@@ -1,0 +1,54 @@
+@page "/countries/create"
+@attribute [ExcludeFromInteractiveRouting]
+@using Microsoft.EntityFrameworkCore
+@using Abc.Data
+@using Abc.Soft.Web.Data
+
+@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create Country</PageTitle>
+
+<h1>Create</h1>
+
+<h2>Country</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="country" OnValidSubmit="addCountry" FormName="create" Enhance>
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" role="alert"/>
+            <MyPropertyEditor TValue="string" Id="name" Label="Name:" @bind-Value="country.Name"/>
+            <MyPropertyEditor TValue="string" Id="code" Label="Code:" @bind-Value="country.Code"/>
+            <MyPropertyEditor TValue="string" Id="details" Label="Details:" @bind-Value="country.Details"/>
+            <MyPropertyEditor TValue="string" Id="isoCode" Label="Iso Code:" @bind-Value="country.IsoCode"/>
+            <MyPropertyEditor TValue="string" Id="nativeName" Label="Native Name:" @bind-Value="country.NativeName"/>
+            <MyPropertyEditor TValue="string" Id="numericCode" Label="Numeric Code:" @bind-Value="country.NumericCode"/>
+            <MyPropertyEditor TValue="string" Id="officialName" Label="Official Name:" @bind-Value="country.OfficialName"/>
+            <MyPropertyEditor TValue="DateTime?" Id="validFrom" Label="Valid From:" @bind-Value="country.ValidFrom"/>
+            <MyPropertyEditor TValue="DateTime?" Id="validTo" Label="Valid To:" @bind-Value="country.ValidTo"/>
+
+            <button type="submit" class="btn btn-primary">Create</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/countries">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    private Country country { get; set; } = default!;
+
+    protected override void OnInitialized() => country ??= new();
+
+    // To protect from overposting attacks, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task addCountry()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Countries.Add(country);
+        await context.SaveChangesAsync();
+        NavigationManager.NavigateTo("/countries");
+    }
+}

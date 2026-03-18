@@ -1,0 +1,48 @@
+@page "/countries"
+@attribute [ExcludeFromInteractiveRouting]
+@using Abc.Soft.Web.Data
+@using Abc.Data
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using Microsoft.EntityFrameworkCore
+@using Abc.Soft.Web.Model
+@implements IAsyncDisposable
+@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Countries</PageTitle>
+
+<h1>Countries</h1>
+
+<p>
+    <a href="countries/create">Create New</a>
+</p>
+
+<QuickGrid Class="table" Items="context.Countries">
+    <PropertyColumn Property="x => x.Code" />
+    <PropertyColumn Property="x => x.Name" />
+    <PropertyColumn Property="x => x.Details" /> 
+    <PropertyColumn Property="x => x.IsoCode" />
+    <PropertyColumn Property="x => x.NativeName" />
+    <PropertyColumn Property="x => x.NumericCode" />
+    <PropertyColumn Property="x => x.OfficialName" />
+
+    <PropertyColumn Property="x => x.ValidFrom" />
+    <PropertyColumn Property="x => x.ValidTo" />   
+
+    <TemplateColumn Context="x">
+        <a href="@($"countries/edit?id={x.Id}")">Edit</a> |
+        <a href="@($"countries/details?id={x.Id}")">Details</a> |
+        <a href="@($"countries/delete?id={x.Id}")">Delete</a>
+    </TemplateColumn>
+</QuickGrid>
+
+@code {
+    private ApplicationDbContext context = default!;
+
+    protected override void OnInitialized()
+    {
+        context = DbFactory.CreateDbContext();
+    }
+
+    public async ValueTask DisposeAsync() => await context.DisposeAsync();
+}
