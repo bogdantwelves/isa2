@@ -1,10 +1,8 @@
 @page "/countries/details"
 @attribute [ExcludeFromInteractiveRouting]
-@using Microsoft.EntityFrameworkCore
 @using Abc.Data
-@using Abc.Soft.Web.Data
-
-@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@using Abc.Infra
+@inject ICountriesRepo repo
 @inject NavigationManager NavigationManager
 
 <PageTitle>Details Country</PageTitle>
@@ -35,8 +33,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        using var context = DbFactory.CreateDbContext();
-        country = await context.Countries.FirstOrDefaultAsync(c => c.Id == Id);
+        country = await repo.GetAsync(Id);
 
         if (country is null)
         {

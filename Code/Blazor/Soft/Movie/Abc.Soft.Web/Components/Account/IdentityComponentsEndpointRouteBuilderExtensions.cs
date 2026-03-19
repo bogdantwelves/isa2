@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Abc.Soft.Web.Components.Account.Pages;
 using Abc.Soft.Web.Components.Account.Pages.Manage;
-using Abc.Soft.Web.Data;
+using Abc.Infra;
 
 namespace Microsoft.AspNetCore.Routing;
 

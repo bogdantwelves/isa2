@@ -1,13 +1,12 @@
 @page "/countries"
 @attribute [ExcludeFromInteractiveRouting]
-@using Abc.Soft.Web.Data
+@using Abc.Infra
 @using Abc.Data
 @using Microsoft.AspNetCore.Components.QuickGrid
-@using Microsoft.EntityFrameworkCore
+@using System.Linq
 @using Abc.Soft.Web.Model
-@implements IAsyncDisposable
-@inject IDbContextFactory<ApplicationDbContext> DbFactory
 @inject NavigationManager NavigationManager
+@inject ICountriesRepo repo
 
 <PageTitle>Countries</PageTitle>
 
@@ -17,7 +16,7 @@
     <a href="countries/create">Create New</a>
 </p>
 
-<QuickGrid Class="table" Items="context.Countries">
+<QuickGrid Class="table" Items="Countries">
     <PropertyColumn Property="x => x.Code" />
     <PropertyColumn Property="x => x.Name" />
     <PropertyColumn Property="x => x.Details" /> 
@@ -37,12 +36,10 @@
 </QuickGrid>
 
 @code {
-    private ApplicationDbContext context = default!;
-
-    protected override void OnInitialized()
+    private IQueryable<Country> Countries = Enumerable.Empty<Country>().AsQueryable();
+    protected override async Task OnInitializedAsync()
     {
-        context = DbFactory.CreateDbContext();
+        if(repo is null) return;
+        Countries = (await repo.GetAsync()).AsQueryable();
     }
-
-    public async ValueTask DisposeAsync() => await context.DisposeAsync();
 }

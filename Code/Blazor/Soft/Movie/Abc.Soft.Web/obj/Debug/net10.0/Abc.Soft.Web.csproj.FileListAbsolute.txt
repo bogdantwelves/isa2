@@ -381,10 +381,10 @@
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/bin/Debug/net10.0/Abc.Shared.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/bin/Debug/net10.0/Abc.Soft.Web.Client.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/bin/Debug/net10.0/Abc.Soft.Web.Client.pdb
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/bin/Debug/net10.0/Abc.Infra.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/bin/Debug/net10.0/Abc.Aids.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/bin/Debug/net10.0/Abc.Data.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/bin/Debug/net10.0/Abc.Domain.pdb
-/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/bin/Debug/net10.0/Abc.Infra.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/bin/Debug/net10.0/Abc.Jobs.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/bin/Debug/net10.0/Abc.Shared.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/EmbeddedAttribute.cs

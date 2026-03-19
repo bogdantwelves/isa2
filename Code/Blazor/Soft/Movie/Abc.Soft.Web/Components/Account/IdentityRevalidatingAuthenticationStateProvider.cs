@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Server;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using Abc.Soft.Web.Data;
+using Abc.Infra;
 
 namespace Abc.Soft.Web.Components.Account;
 
