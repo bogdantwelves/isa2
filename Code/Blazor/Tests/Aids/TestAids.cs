@@ -2,8 +2,9 @@ using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Abc.Tests.Aids;
-public abstract class TestAids<TClass> where TClass : class, new(){
+public abstract class TestAids<TClass>: TestAids where TClass : class, new(){
     protected TClass obj;
+    [TestInitialize] public virtual void Initialize() => type = typeof(TClass);
     protected const BindingFlags publicDeclared = BindingFlags.Public 
         | BindingFlags.Instance
         | BindingFlags.DeclaredOnly
@@ -26,3 +27,14 @@ public abstract class TestAids<TClass> where TClass : class, new(){
         => $"There is no public property {name} in {typeof(TClass).Name}";
 }
 
+public abstract class TestAids
+{
+    protected Type type {get; set;}
+    [TestMethod] public void IsCorrectClassTest(){
+        var className = type?.Name;
+        var testClassName = GetType().Name;
+        Assert.AreEqual(className + "Tests", testClassName);
+    }
+    public void areEqual<T>(T expected, T actual) => Assert.AreEqual(expected,actual);
+    public void areSame(object expected, object actual) => Assert.AreSame(expected, actual);
+}

@@ -4,13 +4,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Abc.Tests.Aids;
 
 public abstract class BaseTests<TClass>: TestAids<TClass> where TClass : class, new(){
-    [TestInitialize] public void TestInitialize() => obj = new TClass();
+    [TestInitialize] public override void Initialize() {base.Initialize(); obj = new TClass();}
     [TestMethod] public void CanCreateTest() => Assert.IsNotNull(obj);
-    [TestMethod] public void IsCorrectClassTest(){
-        var className = typeof(TClass).Name;
-        var testClassName = GetType().Name;
-        Assert.AreEqual(className + "Tests", testClassName);
-    }
+    
     [TestMethod] public void IsClassTestedTest(){
         var testMethods = GetType().GetMethods().Select(x => x.Name);
         var classMembers = typeof(TClass).GetMembers(publicDeclared)
