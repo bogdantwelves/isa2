@@ -17,9 +17,9 @@ public class EfBaseRepo<TContext, TEntity>(TContext c) : IRepo<TEntity>
     }
     public Task DeleteAsync(Guid id)
     {
-        return DeleteCoreAsync(id);
+        return deleteAsync(id);
     }
-    private async Task DeleteCoreAsync(Guid id)
+    private async Task deleteAsync(Guid id)
     {
         var entity = await GetAsync(id);
         if(entity is null) return;
@@ -32,9 +32,9 @@ public class EfBaseRepo<TContext, TEntity>(TContext c) : IRepo<TEntity>
     }
     public async Task<IEnumerable<TEntity>> GetAsync()
     {
-        return await GetAllCoreAsync();
+        return await getAsync();
     }
-    private async Task<IEnumerable<TEntity>> GetAllCoreAsync()
+    private async Task<IEnumerable<TEntity>> getAsync()
     {
         return await db.Set<TEntity>().ToListAsync();
     }

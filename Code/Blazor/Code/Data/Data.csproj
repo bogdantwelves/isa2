@@ -13,4 +13,8 @@
     <ProjectReference Include="../Aids/Aids.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="_Doc/" />
+  </ItemGroup>
+
 </Project>

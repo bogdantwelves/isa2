@@ -27,4 +27,8 @@
     <ProjectReference Include="..\..\..\Code\Infra\Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data/Migrations/" />
+  </ItemGroup>
+
 </Project>

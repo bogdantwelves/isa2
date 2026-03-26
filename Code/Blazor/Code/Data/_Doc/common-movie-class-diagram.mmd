@@ -1,0 +1,33 @@
+classDiagram
+direction TB
+
+namespace Abc.Data.Common {
+  class BaseEntity {
+    +Guid Id
+    +DateTime? ValidFrom
+    +DateTime? ValidTo
+    +byte[] Timestamp
+  }
+
+  class DetailedEntity {
+    +string Details
+  }
+
+  class NamedEntity {
+    +string Name
+    +string Code
+  }
+}
+
+namespace Abc.Data {
+  class Movie {
+    +string Name
+    +DateTime? ValidFrom
+    +string Genre
+    +decimal Price
+  }
+}
+
+BaseEntity <|-- DetailedEntity
+DetailedEntity <|-- NamedEntity
+NamedEntity <|-- Movie

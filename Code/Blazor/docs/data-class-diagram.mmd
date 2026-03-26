@@ -1,0 +1,42 @@
+classDiagram
+direction TB
+
+class Country {
+  <<sealed>>
+  +string OfficialName
+  +string NativeName
+  +string NumericCode
+  -bool IsIsoCountry
+  -bool IsLoyaltyProgram
+  +string IsoCode
+}
+
+class Currency {
+  <<sealed>>
+  +string NumericCode
+  +string MajorUnitSymbol
+  +string MinorUnitSymbol
+  +double RatioOfMinorUnit
+  +bool IsIsoCurrency
+}
+
+class Movie {
+  +string Name
+  +DateTime? ValidFrom
+  +string Genre
+  +decimal Price
+}
+
+class Money {
+  +decimal Amount
+  +Guid CurrencyId
+  +Currency Currency
+}
+
+
+%% NamedEntity <|-- Country
+%% NamedEntity <|-- Currency
+%% NamedEntity <|-- Movie
+
+
+Money --> Currency : CurrencyId

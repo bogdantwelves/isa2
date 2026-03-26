@@ -20,4 +20,14 @@ public class Repos
     {
         
     }
+        public class CountryCurrenciesRepo(ApplicationDbContext c = null)
+        : EfBaseRepo<ApplicationDbContext, CountryCurrency>(c), ICountryCurrenciesRepo
+        {
+            
+        }
+        public class MoneyRepo(ApplicationDbContext c = null)
+        : EfBaseRepo<ApplicationDbContext, Money>(c), IMoneyRepo
+        {
+            
+        }
 }

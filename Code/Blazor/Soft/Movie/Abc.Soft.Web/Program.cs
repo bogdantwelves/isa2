@@ -50,6 +50,8 @@ builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSe
 builder.Services.AddScoped<ICurrenciesRepo, CurrenciesRepo>();
 builder.Services.AddScoped<ICountriesRepo, CountriesRepo>();
 builder.Services.AddScoped<IMoviesRepo, MoviesRepo>();
+builder.Services.AddScoped<ICountryCurrenciesRepo, CountryCurrenciesRepo>();
+builder.Services.AddScoped<IMoneyRepo, MoneyRepo>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
