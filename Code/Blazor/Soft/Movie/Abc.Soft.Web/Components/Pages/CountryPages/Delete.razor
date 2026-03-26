@@ -7,10 +7,7 @@
 @inject NavigationManager NavigationManager
 
 <PageTitle>Delete Country</PageTitle>
-
-<h1>Delete</h1>
-
-<p>Are you sure you want to delete this?</p>
+@* <p>Are you sure you want to delete this?</p>
 <div>
     <h2>Country</h2>
     <hr />
@@ -25,7 +22,12 @@
             <a href="/countries">Back to List</a>
         </EditForm>
     }
-</div>
+</div> *@
+<MyDeletePage PageTitleText="Delete Country" EntityTitle="Country" Entity="country" BasePath="/countries" OnValidSubmit="DeleteCountry">
+    <MyPropertyViewer Label="Name" Value=@country?.Name />
+    <MyPropertyViewer Label="Code" Value=@country?.Code />
+</MyDeletePage>
+
 
 @code {
     private Country country;

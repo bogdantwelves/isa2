@@ -1,52 +1,22 @@
 @page "/movies/delete"
 @attribute [ExcludeFromInteractiveRouting]
+@using Abc.Infra
 @using Microsoft.EntityFrameworkCore
 @using Abc.Data
-@using Abc.Infra
-
-@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@inject IMoviesRepo repo
 @inject NavigationManager NavigationManager
 
-<PageTitle>Delete</PageTitle>
-
-<h1>Delete</h1>
-
-<p>Are you sure you want to delete this?</p>
-<div>
-    <h2>Movie</h2>
-    <hr />
-    @if (movie is null)
-    {
-        <p><em>Loading...</em></p>
-    }
-    else {
-            <MyEntityViewer Entity="@movie"></MyEntityViewer>
-        @* <MyViewItem Label="Title" Value="@movie.Title" />
-        <MyViewItem Label="Release Date" Value="@movie.ReleaseDate.ToString()" />
-        <MyViewItem Label="Genre" Value="@movie.Genre" />
-        <MyViewItem Label="Price" Value="@movie.Price.ToString()" /> *@
-        <EditForm method="post" Model="movie" OnValidSubmit="DeleteMovie" FormName="delete" Enhance>
-            <button type="submit" class="btn btn-danger" disabled="@(movie is null)">Delete</button> |
-            <a href="/movies">Back to List</a>
-        </EditForm>
-    }
-</div>
+<MyDeletePage PageTitleText="Delete Movie" EntityTitle="Movie" Entity="movie" BasePath="/movies" OnValidSubmit="deleteMovie" />
 
 @code {
     private Movie movie;
-    [SupplyParameterFromQuery]
-    private Guid Id { get; set; }
-    protected override async Task OnInitializedAsync()
-    {
-        using var context = DbFactory.CreateDbContext();
-        movie = await context.Movie.FirstOrDefaultAsync(m => m.Id == Id);
-        if (movie is null)  NavigationManager.NotFound();
+    [SupplyParameterFromQuery] private Guid Id { get; set; }
+    protected override async Task OnInitializedAsync() {
+        movie = await repo.GetAsync(Id);
+        if (movie is null) NavigationManager.NotFound();
     }
-    private async Task DeleteMovie()
-    {
-        using var context = DbFactory.CreateDbContext();
-        context.Movie.Remove(movie!);
-        await context.SaveChangesAsync();
+    private async Task deleteMovie() {
+        await repo.DeleteAsync(movie!.Id);
         NavigationManager.NavigateTo("/movies");
     }
 }

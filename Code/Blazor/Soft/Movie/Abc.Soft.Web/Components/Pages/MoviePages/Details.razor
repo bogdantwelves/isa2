@@ -1,56 +1,22 @@
 @page "/movies/details"
 @attribute [ExcludeFromInteractiveRouting]
-@using Microsoft.EntityFrameworkCore
-@using Abc.Data
 @using Abc.Infra
-
-@inject IDbContextFactory<ApplicationDbContext> DbFactory
+@using Abc.Data
+@inject IMoviesRepo repo
 @inject NavigationManager NavigationManager
 
-<PageTitle>Details</PageTitle>
-
-<h1>Details</h1>
-
-<div>
-    <h2>Movie</h2>
-    <hr />
-    @if (movie is null)
-    {
-        <p><em>Loading...</em></p>
-    }
-    else {
-        <MyEntityViewer Entity="@movie"></MyEntityViewer>
-        @* <dl class="row">
-            <dt class="col-sm-2">Title</dt>
-            <dd class="col-sm-10">@movie.Title</dd>
-            <dt class="col-sm-2">ReleaseDate</dt>
-            <dd class="col-sm-10">@movie.ReleaseDate</dd>
-            <dt class="col-sm-2">Genre</dt>
-            <dd class="col-sm-10">@movie.Genre</dd>
-            <dt class="col-sm-2">Price</dt>
-            <dd class="col-sm-10">@movie.Price</dd>
-        </dl> *@
-        <div>
-            <a href="@($"/movies/edit?id={movie.Id}")">Edit</a> |
-            <a href="@($"/movies")">Back to List</a>
-        </div>
-    }
-</div>
+<MyDetailsPage
+    PageTitleText="Details Movie"
+    EntityTitle="Movie"
+    Entity="movie"
+    EntityId="movie?.Id"
+    BasePath="/movies" />
 
 @code {
     private Movie movie;
-
-    [SupplyParameterFromQuery]
-    private Guid Id { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        using var context = DbFactory.CreateDbContext();
-        movie = await context.Movie.FirstOrDefaultAsync(m => m.Id == Id);
-
-        if (movie is null)
-        {
-            NavigationManager.NotFound();
-        }
+    [SupplyParameterFromQuery] private Guid Id { get; set; }
+    protected override async Task OnInitializedAsync() {
+        movie = await repo.GetAsync(Id);
+        if (movie is null) NavigationManager.NotFound();
     }
 }

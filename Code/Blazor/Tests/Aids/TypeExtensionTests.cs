@@ -1,4 +1,3 @@
-using System;
 using Abc.Aids;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Abc.Tests.Aids;
@@ -23,6 +22,8 @@ namespace Abc.Tests.Aids;
     [DataRow(typeof(sbyte?))]
     [DataRow(typeof(byte))]
     [DataRow(typeof(byte?))]
+    [DataRow(typeof(int))]
+    [DataRow(typeof(int?))]
     [TestMethod] public void isNumericTest(Type t) {
         Assert.IsTrue(TypeExtension.isNumeric(t));
         Assert.IsTrue(t.isNumeric());
