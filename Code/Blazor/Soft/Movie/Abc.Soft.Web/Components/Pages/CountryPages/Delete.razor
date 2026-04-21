@@ -2,44 +2,20 @@
 @attribute [ExcludeFromInteractiveRouting]
 @using Abc.Data
 @using Abc.Infra
+@using Abc.Shared.Pages
 
 @inject ICountriesRepo repo
 @inject NavigationManager NavigationManager
 
-<PageTitle>Delete Country</PageTitle>
-@* <p>Are you sure you want to delete this?</p>
-<div>
-    <h2>Country</h2>
-    <hr />
-    @if (country is null)
-    {
-        <p><em>Loading...</em></p>
-    }
-    else {
-        <MyEntityViewer Entity="@country"></MyEntityViewer>
-        <EditForm method="post" Model="country" OnValidSubmit="DeleteCountry" FormName="delete" Enhance>
-            <button type="submit" class="btn btn-danger" disabled="@(country is null)">Delete</button> |
-            <a href="/countries">Back to List</a>
-        </EditForm>
-    }
-</div> *@
-<MyDeletePage PageTitleText="Delete Country" EntityTitle="Country" Entity="country" BasePath="/countries" OnValidSubmit="DeleteCountry">
-    <MyPropertyViewer Label="Name" Value=@country?.Name />
-    <MyPropertyViewer Label="Code" Value=@country?.Code />
-</MyDeletePage>
-
-
+<MyDeletePage PageTitleText="Delete Country" EntityTitle="Country" Entity="country" BasePath="/countries" OnValidSubmit="DeleteCountry" />
 @code {
     private Country country;
-    [SupplyParameterFromQuery]
-    private Guid Id { get; set; }
-    protected override async Task OnInitializedAsync()
-    {
+    [SupplyParameterFromQuery] private Guid Id { get; set; }
+    protected override async Task OnInitializedAsync(){
        country = await repo.GetAsync(Id);
         if (country is null)  NavigationManager.NotFound();
     }
-    private async Task DeleteCountry()
-    {
+    private async Task DeleteCountry(){
         await repo.DeleteAsync(country!.Id);
         NavigationManager.NavigateTo("/countries");
     }

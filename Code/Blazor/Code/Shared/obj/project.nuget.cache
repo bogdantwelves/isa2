@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "n2xEdLYtUO8=",
+  "dgSpecHash": "Pjn5Y8jnTg8=",
   "success": true,
   "projectFilePath": "/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/Shared.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "/Users/bogdantwelve/.nuget/packages/microsoft.aspnetcore.components/10.0.5/microsoft.aspnetcore.components.10.0.5.nupkg.sha512",
     "/Users/bogdantwelve/.nuget/packages/microsoft.aspnetcore.components.analyzers/10.0.5/microsoft.aspnetcore.components.analyzers.10.0.5.nupkg.sha512",
     "/Users/bogdantwelve/.nuget/packages/microsoft.aspnetcore.components.forms/10.0.5/microsoft.aspnetcore.components.forms.10.0.5.nupkg.sha512",
+    "/Users/bogdantwelve/.nuget/packages/microsoft.aspnetcore.components.quickgrid/10.0.5/microsoft.aspnetcore.components.quickgrid.10.0.5.nupkg.sha512",
+    "/Users/bogdantwelve/.nuget/packages/microsoft.aspnetcore.components.quickgrid.entityframeworkadapter/10.0.5/microsoft.aspnetcore.components.quickgrid.entityframeworkadapter.10.0.5.nupkg.sha512",
     "/Users/bogdantwelve/.nuget/packages/microsoft.aspnetcore.components.web/10.0.5/microsoft.aspnetcore.components.web.10.0.5.nupkg.sha512",
     "/Users/bogdantwelve/.nuget/packages/microsoft.aspnetcore.cryptography.internal/10.0.5/microsoft.aspnetcore.cryptography.internal.10.0.5.nupkg.sha512",
     "/Users/bogdantwelve/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/10.0.5/microsoft.aspnetcore.cryptography.keyderivation.10.0.5.nupkg.sha512",

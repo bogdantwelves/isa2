@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "Abc.Soft.Web.Client",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-DEUo0uAd3FoSx+e/wBsJrLkbNEANbSqSj21mYt9lTP4=",
+    "hash": "sha256-47lOQKUb9fbkr/jSlTvwMLZmkmw57a00gI8ny6LSFDY=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.87vtjjdetb.js"
@@ -80,6 +80,18 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "virtualPath": "Microsoft.AspNetCore.Components.Forms.wasm",
         "name": "Microsoft.AspNetCore.Components.Forms.zrueb40r85.wasm",
         "integrity": "sha256-sTHEhK4OXluS5QYyGPIkfDxAb1DqOuLKpTaWfiJmwgQ=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "Microsoft.AspNetCore.Components.QuickGrid.wasm",
+        "name": "Microsoft.AspNetCore.Components.QuickGrid.hkgkfc4nw1.wasm",
+        "integrity": "sha256-H1DZy4Rx8My9lY9TBB5OsmtMhr3KyIaXpPwOJzSugtY=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.wasm",
+        "name": "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.09i4re3vmq.wasm",
+        "integrity": "sha256-nOeOrCDSPdzE9SHxMmwHKv7iglZRZIk7CdsYwJi11e8=",
         "cache": "force-cache"
       },
       {
@@ -1314,88 +1326,88 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "Abc.Aids.wasm",
-        "name": "Abc.Aids.uey7f456wz.wasm",
-        "integrity": "sha256-CodS5GLgYImYDvAyRhGtosdU2v+r1JG2SBW/T707bJs=",
+        "name": "Abc.Aids.fg5ggkio0n.wasm",
+        "integrity": "sha256-YYB01I0PCCv5fdKqsGFw9g0GRFMgpBFLYBpPeA4Cz60=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Data.wasm",
-        "name": "Abc.Data.3077s0ugwf.wasm",
-        "integrity": "sha256-zWQJ+GYp7Dq+n++jHQ0YXEjC+0gSyesZ/pRGLn4OMZA=",
+        "name": "Abc.Data.tsc6nnkj4l.wasm",
+        "integrity": "sha256-TbnKa4g0kfdOX/S/32e9z+rGyfZYdD98sDYd+EjDqNw=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Domain.wasm",
-        "name": "Abc.Domain.ulksiou0qq.wasm",
-        "integrity": "sha256-Uuk2Mq/0YskwRcjQcSESvUDdGwDJb2P1vrtJiHSyVuQ=",
+        "name": "Abc.Domain.3dy3o5ew4o.wasm",
+        "integrity": "sha256-t/x9ny/FctAOO/rwdeg3H1U2sDJVjvVAlEGrF9Ej82s=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Infra.wasm",
-        "name": "Abc.Infra.49unav91k8.wasm",
-        "integrity": "sha256-GBEbHF+acTeuLBrzjeohd2m/XmiU4n2IF4qyaiuFcR4=",
+        "name": "Abc.Infra.4g1o6rq8z6.wasm",
+        "integrity": "sha256-rDBROQ8AVG7G1Br4SYnUCZfJkek9OBB/Yh1UwFWZUfE=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Jobs.wasm",
-        "name": "Abc.Jobs.tu0iq8u6ov.wasm",
-        "integrity": "sha256-1a4pHOcDBvcTJqH4QeCB+Dsxbw3gU5ZJtKpVZ8qQ1Wk=",
+        "name": "Abc.Jobs.oi9hpwh5ji.wasm",
+        "integrity": "sha256-cNNz3E0inc4O6WmYv9bNpWsOnKmPqwzfbfzXVkqyZew=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Shared.wasm",
-        "name": "Abc.Shared.bgdk6oljqf.wasm",
-        "integrity": "sha256-G7eYh/oNQO1jzlS3b09FjzhL+eAL5seAhg9e3pTbhTM=",
+        "name": "Abc.Shared.nh4bpxr5xj.wasm",
+        "integrity": "sha256-hUet8RDGyn2sE13lTOHwCt/MIfh11HyjuPLc0x64pjc=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Soft.Web.Client.wasm",
-        "name": "Abc.Soft.Web.Client.fzjcsps94e.wasm",
-        "integrity": "sha256-1W99g+GTdkqukpyXHw5rszga29Nz7irQNdmkG5vylMg=",
+        "name": "Abc.Soft.Web.Client.jpq1llk23f.wasm",
+        "integrity": "sha256-iVkc2ppLKvqNHCt5GhIchKYjFL27VwglRriX62sscKg=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "Abc.Shared.pdb",
-        "name": "Abc.Shared.p94i4mzmpw.pdb",
-        "integrity": "sha256-HTKPJWBFBXIHJf3E10sPFSF443tZJV2H59eVPQ7+y8U=",
+        "name": "Abc.Shared.naew2n9heg.pdb",
+        "integrity": "sha256-oSG5R0lpaOals3Xz9DAojcvDYRqjv8BXym46tihcNMo=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Aids.pdb",
-        "name": "Abc.Aids.9mb3k5zvww.pdb",
-        "integrity": "sha256-kRVBP3B9PSM82B+PYy82gOGJuajtm5mvkljKqgaQYYk=",
+        "name": "Abc.Aids.n94rwqjjwp.pdb",
+        "integrity": "sha256-pfkS9D3f8haza7sA1ryyiC2KhisZIiX9ukqznJ7A+x8=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Data.pdb",
-        "name": "Abc.Data.25apctsj4w.pdb",
-        "integrity": "sha256-amDNMoSqcJGWhC+sFjaV+prwTaKh30pv0qq9W5+YppE=",
+        "name": "Abc.Data.lce7p1lv20.pdb",
+        "integrity": "sha256-ZbFIXyYunrkZTQ8MemFDPk68IAonMZkHyx7Vmn9EWZc=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Domain.pdb",
-        "name": "Abc.Domain.86hefydtr2.pdb",
-        "integrity": "sha256-cJUoe7YrctcFP04+PnANlEJP2HRXDXlnLkOKeeWhPZo=",
+        "name": "Abc.Domain.z2vajoiv9z.pdb",
+        "integrity": "sha256-JREUCJoQfOa8F9KzSVeH/OpFcmb6Oc1JwLPZl6l8ZIQ=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Infra.pdb",
-        "name": "Abc.Infra.g9udcgg2hw.pdb",
-        "integrity": "sha256-dCbW3HGct2QciGXocLNsG3opo7tD/3SIVtGuNvs7HlY=",
+        "name": "Abc.Infra.bn3dkfdsqp.pdb",
+        "integrity": "sha256-Saw19girEQ31xgFnbi5ats923ZnvY1SYTUMRaehrwDs=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Jobs.pdb",
-        "name": "Abc.Jobs.vm5pjt91he.pdb",
-        "integrity": "sha256-xz/MW1F0hHkgzVCrDCYCTXlbbL13sBxnwwVJPzNg784=",
+        "name": "Abc.Jobs.j4vh8w7mja.pdb",
+        "integrity": "sha256-LdCTJFghCzDCD/VhSTA4ZqnVNX5t8BlZlFMirWlhgY4=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "Abc.Soft.Web.Client.pdb",
-        "name": "Abc.Soft.Web.Client.cbr0wmu5d2.pdb",
-        "integrity": "sha256-SOJ+ab8yfGIN4ErR8tfBVIgPOmGGQnJ9rk00IqQU/U0=",
+        "name": "Abc.Soft.Web.Client.jcp0jadf8o.pdb",
+        "integrity": "sha256-rZS8mg/L74bhanGfHBwucVP3933wFyY2TEGtxN1yYZI=",
         "cache": "force-cache"
       }
     ],

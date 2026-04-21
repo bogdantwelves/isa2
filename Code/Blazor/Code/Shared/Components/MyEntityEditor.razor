@@ -1,5 +1,29 @@
-﻿<h3>MyEntityEditor</h3>
+﻿@using System.Reflection
+@using Microsoft.AspNetCore.Components
+
+@if (Entity is null) {
+    <p><em>Loading...</em></p>
+} else {
+    @foreach (var p in editableProperties(Entity)) {
+        var adapter = new EditorAdapter(this, Entity, p.Name);
+        if (adapter.Editor is null) continue;
+
+        <div class="mb-3">
+            <label for="@p.Name" class="form-label">@adapter.DisplayName</label>
+            <DynamicComponent Type="@adapter.Editor" Parameters="@adapter.EditorParams" />
+            <DynamicComponent Type="@adapter.Validator" Parameters="@adapter.ValidationParams" />
+        </div>
+    }
+}
 
 @code {
+    [Parameter] public object Entity { get; set; }
 
+    private static IEnumerable<PropertyInfo> editableProperties(object entity) {
+        return entity.GetType()
+            .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+            .Where(p => p.CanRead && p.CanWrite)
+            .Where(p => p.GetIndexParameters().Length == 0)
+            .Where(p => p.Name is not (nameof(Abc.Data.Common.BaseEntity.Id) or nameof(Abc.Data.Common.BaseEntity.Timestamp)));
+    }
 }

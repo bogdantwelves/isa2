@@ -1109,8 +1109,8 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "Abc.Domain >= 1.0.0",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 10.0.5",
-      "Microsoft.EntityFrameworkCore >= 10.0.5"
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 10.*",
+      "Microsoft.EntityFrameworkCore >= 10.*"
     ]
   },
   "packageFolders": {
@@ -1163,11 +1163,11 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[10.0.5, )"
+            "version": "[10.*, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[10.0.5, )"
+            "version": "[10.*, )"
           }
         },
         "imports": [

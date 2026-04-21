@@ -205,7 +205,7 @@ namespace Abc.Infra.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movie");
+                    b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("Abc.Infra.ApplicationUser", b =>

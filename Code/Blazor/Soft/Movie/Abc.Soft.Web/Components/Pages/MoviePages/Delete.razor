@@ -1,13 +1,13 @@
 @page "/movies/delete"
 @attribute [ExcludeFromInteractiveRouting]
 @using Abc.Infra
+@using Abc.Shared.Pages
 @using Microsoft.EntityFrameworkCore
 @using Abc.Data
 @inject IMoviesRepo repo
 @inject NavigationManager NavigationManager
 
 <MyDeletePage PageTitleText="Delete Movie" EntityTitle="Movie" Entity="movie" BasePath="/movies" OnValidSubmit="deleteMovie" />
-
 @code {
     private Movie movie;
     [SupplyParameterFromQuery] private Guid Id { get; set; }
