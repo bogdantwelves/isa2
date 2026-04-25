@@ -29,8 +29,6 @@
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/scopedcss/bundle/Abc.Shared.styles.css
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/scopedcss/projectbundle/Abc.Shared.bundle.scp.css
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/compressed/j4rr02ik7x-{0}-luzdqbu196-luzdqbu196.gz
-/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/compressed/kmdzzlrzqm-{0}-bpvchsf4wt-bpvchsf4wt.gz
-/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/compressed/kk8z6b8yqy-{0}-b74iqmbcsb-b74iqmbcsb.gz
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/staticwebassets.build.json
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/staticwebassets.build.json.cache
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/staticwebassets.development.json
@@ -47,3 +45,5 @@
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/refint/Abc.Shared.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/Abc.Shared.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/ref/Abc.Shared.dll
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/compressed/kmdzzlrzqm-{0}-y4zkofwbua-y4zkofwbua.gz
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Code/Shared/obj/Debug/net10.0/compressed/kk8z6b8yqy-{0}-24645va844-24645va844.gz

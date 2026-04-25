@@ -455,7 +455,6 @@
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/compressed/pxxp8o6ovi-{0}-2i0r6wwb69-2i0r6wwb69.gz
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/compressed/wqpdlky7nt-{0}-iz83ucvm53-iz83ucvm53.gz
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/compressed/1x45lb54o8-{0}-boiwgh0w5b-boiwgh0w5b.gz
-/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/compressed/qljggsm8fq-{0}-bjvef75gt3-bjvef75gt3.gz
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/staticwebassets.build.json
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/staticwebassets.build.json.cache
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/staticwebassets.development.json
@@ -467,3 +466,4 @@
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/Abc.Soft.Web.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/Abc.Soft.Web.genruntimeconfig.cache
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/ref/Abc.Soft.Web.dll
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Soft/Movie/Abc.Soft.Web/obj/Debug/net10.0/compressed/qljggsm8fq-{0}-g4ppw5ovl0-g4ppw5ovl0.gz

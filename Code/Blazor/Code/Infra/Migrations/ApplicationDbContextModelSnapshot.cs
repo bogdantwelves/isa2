@@ -15,7 +15,7 @@ namespace Abc.Infra.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.5");
+            modelBuilder.HasAnnotation("ProductVersion", "10.0.7");
 
             modelBuilder.Entity("Abc.Data.Country", b =>
                 {
@@ -66,7 +66,7 @@ namespace Abc.Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CountryId")
+                    b.Property<Guid?>("CountryId")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("CurrencyId")
@@ -87,8 +87,6 @@ namespace Abc.Infra.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CountryId");
 
                     b.HasIndex("CurrencyId");
 
@@ -150,7 +148,7 @@ namespace Abc.Infra.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("CurrencyId")
+                    b.Property<Guid?>("CurrencyId")
                         .HasColumnType("TEXT");
 
                     b.Property<byte[]>("Timestamp")
@@ -424,17 +422,9 @@ namespace Abc.Infra.Migrations
 
             modelBuilder.Entity("Abc.Data.CountryCurrency", b =>
                 {
-                    b.HasOne("Abc.Data.Country", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Abc.Data.Currency", "Currency")
                         .WithMany()
                         .HasForeignKey("CurrencyId");
-
-                    b.Navigation("Country");
 
                     b.Navigation("Currency");
                 });
@@ -443,9 +433,7 @@ namespace Abc.Infra.Migrations
                 {
                     b.HasOne("Abc.Data.Currency", "Currency")
                         .WithMany()
-                        .HasForeignKey("CurrencyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CurrencyId");
 
                     b.Navigation("Currency");
                 });

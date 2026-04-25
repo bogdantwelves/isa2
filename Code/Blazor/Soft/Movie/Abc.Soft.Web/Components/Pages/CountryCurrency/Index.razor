@@ -1,0 +1,22 @@
+﻿@page "/countrycurrencies"
+@attribute [ExcludeFromInteractiveRouting]
+@using Abc.Data
+@using Abc.Infra
+@using Abc.Shared.Pages
+@inject NavigationManager NavigationManager
+@inject ICountryCurrenciesRepo repo
+
+<MyIndexPage 
+    PageTitleText= "Country Currencies Page" 
+    EntityTitle= "Country Currency" 
+    Items="item"
+    BasePath="/countrycurrencies"   />
+
+@code {
+    private IQueryable<Data.CountryCurrency> item = Enumerable.Empty<Data.CountryCurrency>().AsQueryable();
+    protected override async Task OnInitializedAsync()
+    {
+        if(repo is null) return;
+        item = (await repo.GetAsync()).AsQueryable();
+    }
+}

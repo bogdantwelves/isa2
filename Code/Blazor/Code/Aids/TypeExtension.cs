@@ -14,6 +14,7 @@ public static class TypeExtension
 
     public static bool isString(this Type t) => t == typeof(string);
     public static bool isDate(this Type t) => t == typeof(DateTime) || t == typeof(DateOnly);
+    public static bool isGuid(this Type t) => toUnderlying(t) == typeof(Guid);
     public static bool isNumeric(this Type t)
     {
         t = toUnderlying(t);

@@ -1,0 +1,28 @@
+@page "/currencies/edit"
+@using Abc.Data
+@using Abc.Infra
+@using Abc.Shared.Pages
+@attribute [ExcludeFromInteractiveRouting]
+@inject ICurrenciesRepo repo
+@inject NavigationManager NavigationManager
+
+<MyEditPage 
+    PageTitleText="Edit Currency" 
+    EntityTitle="@currency?.Name" 
+    Entity="currency" 
+    BasePath="/currencies"
+    EntityId="@Id"
+    OnValidSubmit="updateCurrency" />
+
+@code {
+    [SupplyParameterFromQuery] private Guid Id { get; set; }
+    [SupplyParameterFromForm] private Currency currency { get; set; }
+    protected override async Task OnInitializedAsync() {
+        currency ??= await repo.GetAsync(Id);
+        if (currency is null) NavigationManager.NotFound();
+    }
+    private async Task updateCurrency() {
+        await repo.UpdateAsync(currency!);
+        NavigationManager.NavigateTo("/currencies");
+    }
+}

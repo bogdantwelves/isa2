@@ -10,7 +10,7 @@
     <a href=@($"{BasePath}/create")>Create New</a>
 </p>
 
-<MyEntitiesTable TEntity="TItem" Entities="Items" BasePath="@BasePath" />
+<MyEntityTabel TEntity="TItem" Entities="Items" BasePath="@BasePath" />
 
 @code {
     [Parameter] public string PageTitleText { get; set; } = "Create";
