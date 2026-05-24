@@ -1,28 +1,16 @@
 @page "/countries"
 @attribute [ExcludeFromInteractiveRouting]
-@using Abc.Infra
-@using Abc.Data
-@using Microsoft.AspNetCore.Components.QuickGrid
-@using System.Linq
-@using Abc.Soft.Web.Model
 @inject NavigationManager NavigationManager
 @inject ICountriesRepo repo
 
-<PageTitle>Countries</PageTitle>
 
-<h1>Countries</h1>
-
-<p>
-    <a href="/countries/create">Create New</a>
-</p>
-
-<MyEntityTabel Entities="Countries" BasePath="/countries" />
+<MyIndexPage 
+    TItem="Country" 
+    PageTitleText="Countries" 
+    EntityTitle="Countries" 
+    Repo="repo" 
+    BasePath="countries">
+</MyIndexPage>
 
 @code {
-    private IQueryable<Country> Countries = Enumerable.Empty<Country>().AsQueryable();
-    protected override async Task OnInitializedAsync()
-    {
-        if(repo is null) return;
-        Countries = (await repo.GetAsync()).AsQueryable();
-    }
 }

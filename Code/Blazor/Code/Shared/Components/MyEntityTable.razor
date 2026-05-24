@@ -1,0 +1,56 @@
+﻿@using Abc.Data.Common
+@using Abc.Infra
+@using Abc.Share.Code
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using System.Reflection
+@using System.Collections
+
+@typeparam TEntity where TEntity : BaseEntity
+
+
+@code {
+    private IQueryable<TEntity> Entities { get; set; }
+    [Parameter] public IRepo<TEntity> Repo { get; set; }
+    [Parameter] public string BasePath { get; set; }
+    [Inject] private NavigationManager nav { get; set; }
+    private int totalCount;
+    private Query query = new();
+    protected override async Task OnInitializedAsync() {
+        if (Repo is null) return;
+        var uri = nav.ToAbsoluteUri(nav.Uri);
+        query = new UrlParams(uri).Parse();
+        totalCount = await Repo.CountAsync(query);
+        Entities = (await Repo.GetAsync(query)).AsQueryable();
+    }
+    private string value(PropertyInfo p, TEntity e) {
+        var v = p?.GetValue(e);
+        return v?.ToString() ?? string.Empty;
+    }
+    private bool show(PropertyInfo p) {
+        if (p is null) return false;
+        if (p.Name == nameof(NamedEntity.Id)) return false;
+        var t = p.PropertyType;
+        if (t == typeof(string)) return true;
+        if (typeof(IEnumerable).IsAssignableFrom(t)) return false;
+        if (t.IsClass) return false;
+        return true;
+    }
+}
+
+<style>
+    .myTable{
+        table-layout: fixed;
+        width: 100%;
+        max-width: 100%;
+    }
+    .myTable td{
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+    .myTable th{
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+</style>

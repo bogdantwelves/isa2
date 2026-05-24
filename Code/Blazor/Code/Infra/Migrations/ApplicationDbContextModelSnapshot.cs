@@ -15,7 +15,7 @@ namespace Abc.Infra.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.7");
+            modelBuilder.HasAnnotation("ProductVersion", "10.0.8");
 
             modelBuilder.Entity("Abc.Data.Country", b =>
                 {
@@ -87,6 +87,8 @@ namespace Abc.Infra.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
 
                     b.HasIndex("CurrencyId");
 
@@ -178,10 +180,16 @@ namespace Abc.Infra.Migrations
                     b.Property<string>("Code")
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid?>("CountryId")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Details")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Genre")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("MoneyId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
@@ -202,6 +210,10 @@ namespace Abc.Infra.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.HasIndex("MoneyId");
 
                     b.ToTable("Movies");
                 });
@@ -422,6 +434,10 @@ namespace Abc.Infra.Migrations
 
             modelBuilder.Entity("Abc.Data.CountryCurrency", b =>
                 {
+                    b.HasOne("Abc.Data.Country", null)
+                        .WithMany("Currencies")
+                        .HasForeignKey("CountryId");
+
                     b.HasOne("Abc.Data.Currency", "Currency")
                         .WithMany()
                         .HasForeignKey("CurrencyId");
@@ -436,6 +452,21 @@ namespace Abc.Infra.Migrations
                         .HasForeignKey("CurrencyId");
 
                     b.Navigation("Currency");
+                });
+
+            modelBuilder.Entity("Abc.Data.Movie", b =>
+                {
+                    b.HasOne("Abc.Data.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId");
+
+                    b.HasOne("Abc.Data.Money", "Money")
+                        .WithMany()
+                        .HasForeignKey("MoneyId");
+
+                    b.Navigation("Country");
+
+                    b.Navigation("Money");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -538,6 +569,11 @@ namespace Abc.Infra.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Abc.Data.Country", b =>
+                {
+                    b.Navigation("Currencies");
                 });
 #pragma warning restore 612, 618
         }

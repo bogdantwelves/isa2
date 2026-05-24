@@ -1,9 +1,9 @@
+using Abc.Infra;
+using Abc.Soft.Web;
+using Abc.Soft.Web.Components.Account;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Abc.Soft.Web.Components;
-using Abc.Soft.Web.Components.Account;
-using Abc.Infra;
 using static Abc.Infra.Repos;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,10 +31,12 @@ builder.Services.AddDbContextFactory<ApplicationDbContext>(options => options.Us
 
 builder.Services.AddQuickGridEntityFrameworkAdapter();
 //builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    // options.UseSqlite(connectionString));
+//    options.UseSqlite(connectionString));
 
+// Kui kuskil on DI-s vaja ApplicationDbContext-i (mitte factory’t), võta see factory kaudu:
 builder.Services.AddScoped(sp =>
     sp.GetRequiredService<IDbContextFactory<ApplicationDbContext>>().CreateDbContext());
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options =>
@@ -47,12 +49,31 @@ builder.Services.AddIdentityCore<ApplicationUser>(options =>
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
-builder.Services.AddScoped<ICurrenciesRepo, CurrenciesRepo>();
-builder.Services.AddScoped<ICountriesRepo, CountriesRepo>();
 builder.Services.AddScoped<IMoviesRepo, MoviesRepo>();
-builder.Services.AddScoped<ICountryCurrenciesRepo, CountryCurrenciesRepo>();
+builder.Services.AddScoped<ICountriesRepo, CountriesRepo>();
+builder.Services.AddScoped<ICurrenciesRepo, CurrenciesRepo>();
 builder.Services.AddScoped<IMoneyRepo, MoneyRepo>();
+builder.Services.AddScoped<ICountryCurrenciesRepo, CountryCurrenciesRepo>();
+
 var app = builder.Build();
+
+// using var scope = app.Services.CreateScope();
+// var sp = scope.ServiceProvider;
+// var db = sp.GetRequiredService<ApplicationDbContext>();
+// await db.Database.MigrateAsync();
+
+// var seedEnabled = builder.Configuration.GetValue("SeedDb:Enabled", app.Environment.IsDevelopment());
+// if (seedEnabled) {
+//     var seedCount = builder.Configuration.GetValue("SeedDb:RecordCount", 200);
+//     await new SeedDb(db, seedCount).Seed();
+// }
+
+using var scope = app.Services.CreateScope();
+var sp = scope.ServiceProvider;
+var db = sp.GetRequiredService<ApplicationDbContext>();
+await new SeedDb(db, 10000).Seed();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -76,7 +97,7 @@ app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Abc.Soft.Web.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(Abc.Soft.Web.Client.ClientAssemblyMarker).Assembly);
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();

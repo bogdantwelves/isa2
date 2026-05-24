@@ -1,28 +1,15 @@
 @page "/movies"
 @attribute [ExcludeFromInteractiveRouting]
-@using Abc.Infra
-@using Abc.Data
-@using Microsoft.AspNetCore.Components.QuickGrid
-@using System.Linq
-@using Abc.Soft.Web.Model
-@inject NavigationManager NavigationManager
 @inject IMoviesRepo repo
+@inject NavigationManager NavigationManager
 
-<PageTitle>Movies</PageTitle>
-
-<h1>Movies</h1>
-
-<p>
-    <a href="/movies/create">Create New</a>
-</p>
-
-<MyEntityTabel Entities="Movies" BasePath="/movies" />
+<MyIndexPage 
+    TItem="Movie" 
+    PageTitleText="Movies Page" 
+    EntityTitle="Movies" 
+    Repo="repo" 
+    BasePath="movies">
+</MyIndexPage>
 
 @code {
-    private IQueryable<Data.Movie> Movies = Enumerable.Empty<Data.Movie>().AsQueryable();
-    protected override async Task OnInitializedAsync()
-    {
-        if(repo is null) return;
-        Movies = (await repo.GetAsync()).AsQueryable();
-    }
 }

@@ -260,10 +260,12 @@
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/Abc.Tests.Aids.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/MSTest.TestFramework.Extensions.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/Abc.Data.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/Abc.Tests.Aids.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/Abc.Aids.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/MSTest.TestFramework.Extensions.xml
+/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/pl/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
@@ -291,5 +293,3 @@
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/obj/Debug/net10.0/Abc.Tests.Data.pdb
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/obj/Debug/net10.0/Data.genruntimeconfig.cache
 /Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/obj/Debug/net10.0/ref/Abc.Tests.Data.dll
-/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
-/Users/bogdantwelve/isa2projects/isa2/Code/Blazor/Tests/Tests.Data/bin/Debug/net10.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml

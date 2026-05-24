@@ -1,0 +1,46 @@
+@page "/simple"
+@using Microsoft.EntityFrameworkCore
+@inject ApplicationDbContext dbContext
+
+<h2>Countries from Database</h2>
+
+@if (countries == null)
+{
+    <p>Loading...</p>
+}
+else if (countries.Count == 0)
+{
+    <p>No countries found in database.</p>
+}
+else
+{
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in countries.Take(20))
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Name</td>
+                    <td>@c.Code</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>Total: @countries.Count countries (showing first 20)</p>
+}
+
+@code {
+    private List<Country>? countries;
+
+    protected override async Task OnInitializedAsync()
+    {
+        countries = await dbContext.Countries.ToListAsync();
+    }
+}

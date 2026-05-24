@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
    <Nullable>disable</Nullable>
     <AssemblyName>Abc.Soft.Web.Client</AssemblyName>
-    <RootNamespace>Abc.Soft.Web.Client </RootNamespace>
+    <RootNamespace>Abc.Soft.Web.Client</RootNamespace>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
     <StaticWebAssetProjectMode>Default</StaticWebAssetProjectMode>
