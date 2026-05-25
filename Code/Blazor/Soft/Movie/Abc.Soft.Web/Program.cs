@@ -1,10 +1,14 @@
+
 using Abc.Infra;
 using Abc.Soft.Web;
 using Abc.Soft.Web.Components.Account;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using static Abc.Infra.Repos;
+using System.Globalization;
+
+CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,17 +61,6 @@ builder.Services.AddScoped<ICountryCurrenciesRepo, CountryCurrenciesRepo>();
 
 var app = builder.Build();
 
-// using var scope = app.Services.CreateScope();
-// var sp = scope.ServiceProvider;
-// var db = sp.GetRequiredService<ApplicationDbContext>();
-// await db.Database.MigrateAsync();
-
-// var seedEnabled = builder.Configuration.GetValue("SeedDb:Enabled", app.Environment.IsDevelopment());
-// if (seedEnabled) {
-//     var seedCount = builder.Configuration.GetValue("SeedDb:RecordCount", 200);
-//     await new SeedDb(db, seedCount).Seed();
-// }
-
 using var scope = app.Services.CreateScope();
 var sp = scope.ServiceProvider;
 var db = sp.GetRequiredService<ApplicationDbContext>();
@@ -97,7 +90,7 @@ app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Abc.Soft.Web.Client.ClientAssemblyMarker).Assembly);
+    .AddAdditionalAssemblies(typeof(Abc.Soft.Web.Client._Imports).Assembly);
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();

@@ -1,24 +1,25 @@
 ﻿@using Abc.Infra
-
+@using Abc.Shared.Code
 <div class="d-flex align-items-center gap-2">
-    @if(isFirstPage) {
+    @if (isFirstPage) {
         <span>First</span>
         <span>Prev</span>
     } else {
         <a href="@firstHref">First</a>
         <a href="@prevHref">Prev</a>
     }
-    <span>Page @pageNo / @totalPages()</span>
+    
+    <span>Page @pageNo / @totalPages() </span>
 
-    @if(isLastPage) {
+    @if (isLastPage) {
         <span>Next</span>
         <span>Last</span>
     } else {
         <a href="@nextHref">Next</a>
         <a href="@lastHref">Last</a>
     }
-
-    <span>Total: @TotalCount. Rows:</span>
+    
+    <span>Total: @TotalCount Rows: </span>
     @foreach (var s in Query.PageSizes) {
         if (s == pageSize) {
             <span>@s</span>
@@ -26,7 +27,6 @@
             <a href="@sizeHref(s)">@s</a>
         }
     }
-
 </div>
 
 @code{
@@ -35,19 +35,97 @@
     [Parameter] public int TotalCount { get; set; }
     private string baseUri => (CurrentUri ?? string.Empty).Split('?', 2)[0];
     private int pageNo => Query?.Page ?? 1;
-     private int pageSize => Query?.PageSize ?? 1;
+    private int pageSize => Query?.PageSize ?? 1;
     private int totalPages() {
         if (pageSize <= 0) return TotalCount;
         var p = TotalCount / pageSize;
         if (TotalCount % pageSize > 0) p++;
         return p;
     }
+    private string sort => string.IsNullOrEmpty(Query?.SortBy) 
+        ? string.Empty : $"&SortBy={Query.SortBy}&SortDir={Query.SortDir}";
+   
+    private string search => string.IsNullOrEmpty(Query?.SearchStr)
+        ? string.Empty: $"&SearchBy={Query.SearchBy}&SearchStr={Query.SearchStr}";
+
     private bool isFirstPage => pageNo == 1;
     private bool isLastPage => pageNo == totalPages();
-    private string firstHref => $"{baseUri}?Page=1&PageSize={pageSize}";
-    private string prevHref => $"{baseUri}?Page={pageNo - 1}&PageSize={pageSize}";
-    private string nextHref => $"{baseUri}?Page={pageNo + 1}&PageSize={pageSize}";
-    private string lastHref => $"{baseUri}?Page={totalPages()}&PageSize={pageSize}";
-    private string sizeHref(int s) => $"{baseUri}?Page=1&PageSize={s}";
-
+    private string firstHref => $"{baseUri}?Page=1&PageSize={pageSize}{sort}{search}";
+    private string prevHref => $"{baseUri}?Page={pageNo - 1}&PageSize={pageSize}{sort}{search}";
+    private string nextHref => $"{baseUri}?Page={pageNo + 1}&PageSize={pageSize}{sort}{search}";
+    private string lastHref => $"{baseUri}?Page={totalPages()}&PageSize={pageSize}{sort}{search}";
+    private string sizeHref(int s) => $"{baseUri}?Page=1&PageSize={s}{sort}{search}";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* @using Abc.Shared.Code
+<div class="d-flex align-items-center gap-2">
+    @if (isFirstPage) {
+        <span>First</span>
+        <span>Prev</span>
+    } else {
+        <a href="@firstHref">First</a>
+        <a href="@prevHref">Prev</a>
+    }
+
+    <span>Page @State.Page / @pages</span>
+
+    @if (isLastPage) {
+        <span>Next</span>
+        <span>Last</span>
+    } else {
+        <a href="@nextHref">Next</a>
+        <a href="@lastHref">Last</a>
+    }
+
+    <span>Total: @TotalCount</span>
+
+    <span>Rows:</span>
+    @foreach (var s in TablePageAdapter.Sizes) {
+        if (s == State.PageSize) {
+            <strong>@s</strong>
+        } else {
+            <a href="@sizeHref(s)">@s</a>
+        }
+    }
+</div>
+
+@code {
+    [Parameter] public TableState State { get; set; } = new();
+    [Parameter] public int TotalCount { get; set; }
+    [Parameter] public string CurrentUri { get; set; }
+
+    private int pages => TablePageAdapter.PageCount(TotalCount, State.PageSize);
+    private bool isFirstPage => TablePageAdapter.IsFirstPage(State.Page);
+    private bool isLastPage => TablePageAdapter.IsLastPage(State.Page, TotalCount, State.PageSize);
+    private string firstHref => TableUrlStateAdapter.BuildPageHref(CurrentUri, TablePageAdapter.FirstPage());
+    private string prevHref => TableUrlStateAdapter.BuildPageHref(CurrentUri, TablePageAdapter.PrevPage(State.Page));
+    private string nextHref => TableUrlStateAdapter.BuildPageHref(CurrentUri, TablePageAdapter.NextPage(State.Page));
+    private string lastHref => TableUrlStateAdapter.BuildPageHref(CurrentUri, TablePageAdapter.LastPage(TotalCount,
+State.PageSize));
+    private string sizeHref(int s) => TableUrlStateAdapter.BuildPageSizeHref(CurrentUri, s);
+}
+ *@

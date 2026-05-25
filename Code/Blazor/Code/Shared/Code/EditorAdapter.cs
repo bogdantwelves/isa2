@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Components.Forms;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text.RegularExpressions;
+
 namespace Abc.Shared.Components;
+
 public interface IEditorAdapter {
     string DisplayName { get; }
     PropertyInfo PropInfo { get; }
@@ -13,6 +15,7 @@ public interface IEditorAdapter {
     IDictionary<string, object> EditorParams { get; }
     IDictionary<string, object> ValidationParams { get; }
 }
+
 public sealed partial class EditorAdapter(ComponentBase c, object item, string propName): IEditorAdapter {
     public PropertyInfo PropInfo => ad?.PropInfo;
     public string DisplayName => hasName ? toName : string.Empty;
@@ -60,4 +63,5 @@ public sealed partial class EditorAdapter(ComponentBase c, object item, string p
     internal object valChanged() => makeGeneric(method(nameof(changed)));
     internal object valExpression() => makeGeneric(method(nameof(expression)));
     internal static Type generic(Type editor, Type t) => editor.MakeGenericType(t);
+
 }

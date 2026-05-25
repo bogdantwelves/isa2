@@ -1,10 +1,13 @@
 using Abc.Aids;
 using Abc.Data;
 using Microsoft.EntityFrameworkCore;
+
 namespace Abc.Infra;
 
 public sealed class SeedDb(ApplicationDbContext db, int recCnt = 20) {
     public async Task Seed() {
+        await db.Database.MigrateAsync();
+
         await seedTable(db.Currencies, [
             nameof(Currency.Timestamp)]);
         
@@ -24,28 +27,23 @@ public sealed class SeedDb(ApplicationDbContext db, int recCnt = 20) {
             nameof(CountryCurrency.Timestamp)]);
         
         await seedTable(db.Movies, [
-            //nameof(Movie.Country), 
-            //nameof(Movie.Money), 
+            nameof(Movie.Country), 
+            nameof(Movie.Money), 
             nameof(Movie.Timestamp)]);
     }
 
-    private const int batchSize = 100;
-
-    private async Task seedTable<T>(DbSet<T> set, string[]? exclude = null) where T : class {
+    private async Task seedTable<T>(DbSet<T> set, string[] exclude = null) where T : class {
         if (set.Any()) return;
-        var items = new List<T>(batchSize);
+        var items = new List<T>();
         for (var i = 1; i <= recCnt; i++) {
             var item = (T) GetRandom.Object(typeof(T), exclude);
             items.Add(item);
-            if (items.Count % batchSize == 0) {
-                await set.AddRangeAsync(items);
-                await db.SaveChangesAsync();
-                items.Clear();
-            }
-        }
-        if (items.Count > 0) {
+            if (items.Count % 100 != 0) continue;
             await set.AddRangeAsync(items);
             await db.SaveChangesAsync();
+            items = [];
         }
+        await set.AddRangeAsync(items);
+        await db.SaveChangesAsync();
     }
 }

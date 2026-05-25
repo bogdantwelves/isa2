@@ -1,35 +1,28 @@
-﻿@using System.Linq.Expressions
-@using Microsoft.AspNetCore.Components.Forms
-@typeparam TValue
-
-<div class="mb-3">
-    <label for="@Id" class="form-label">@Label</label>
-    @if (IsString) {
-        <InputText id="@Id" class="form-control" Value="@StringValue" 
-           ValueChanged="@OnStringValueChanged" ValueExpression="@StringValueExpression" />
-    } else if (IsDate) {
-        <InputDate TValue="TValue" id="@Id" class="form-control" Value="@Value" 
-            ValueChanged="@ValueChanged" ValueExpression="@ValueExpression" />
-    } else {
-        <InputNumber TValue="TValue" id="@Id" class="form-control" Value="@Value" 
-            ValueChanged="@ValueChanged" ValueExpression="@ValueExpression" />
+﻿<dl class="row">
+    @if (hasProperty) {
+        <dt class="col-md-4">
+            <label for="@PropertyName" class="form-label">@inputLabel</label>
+        </dt>
+        <dd class="col-md-8">
+            @if (hasEditor) {
+                <DynamicComponent Type="@editorType" Parameters="@editorParams" />
+                <DynamicComponent Type="@validationType" Parameters="@validationParams" />
+            }
+        </dd>
     }
-    <ValidationMessage For="@ValueExpression" class="text-danger" />
-</div>
+</dl>
 
 @code {
-    [Parameter] public string Id { get; set; } = string.Empty;
-    [Parameter] public string Label { get; set; } = string.Empty;
-    [Parameter] public TValue Value { get; set; }
-    [Parameter] public EventCallback<TValue> ValueChanged { get; set; }
-    [Parameter] public Expression<Func<TValue>> ValueExpression { get; set; }
-    private static Type UnderlyingType => Nullable.GetUnderlyingType(typeof(TValue)) ?? typeof(TValue);
-    private static bool IsString => UnderlyingType == typeof(string);
-    private static bool IsDate => UnderlyingType == typeof(DateTime) || UnderlyingType == typeof(DateOnly);
-    private string StringValue => Value as string;
-    private Task OnStringValueChanged(string value) {
-        return ValueChanged.InvokeAsync((TValue)(object)value);
-    }
-    private Task OnDateValueChanged(DateOnly value) => ValueChanged.InvokeAsync((TValue)(object)value);
-    private Expression<Func<string>> StringValueExpression => ValueExpression as Expression<Func<string>>;
+    [Parameter] public object Item { get; set; }
+    [Parameter] public string PropertyName { get; set; } = string.Empty;
+    protected override void OnParametersSet() => ad = crAdapter();
+    private IEditorAdapter crAdapter() => new EditorAdapter(this, Item, PropertyName);
+    private IEditorAdapter ad;
+    private bool hasEditor => editorType is not null;
+    private bool hasProperty => ad?.PropInfo is not null;
+    private string inputLabel => ad?.DisplayName ?? string.Empty;  
+    private Type editorType => ad?.Editor;
+    private Type validationType => ad?.Validator;
+    private IDictionary<string, object> editorParams => ad?.EditorParams;
+    private IDictionary<string, object> validationParams  => ad?.ValidationParams;
 }
