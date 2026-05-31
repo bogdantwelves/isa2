@@ -9,6 +9,7 @@ public sealed class Query(Dictionary<string, string> d = null) {
     public int PageSize => toInt(get(nameof(PageSize)), PageSizes[0]);
     public string SortBy => get(nameof(SortBy));
     public string SortDir => get(nameof(SortDir));
+    public string Selected => get(nameof(Selected));
     public string SearchBy => get(nameof(SearchBy));
     public string SearchStr => get(nameof(SearchStr));
     private string get(string s) => (d ?? []).TryGetValue(s, out var x) ? x : null;

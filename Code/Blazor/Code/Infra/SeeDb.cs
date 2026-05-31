@@ -23,6 +23,7 @@ public sealed class SeedDb(ApplicationDbContext db, int recCnt = 20) {
         await seedTable(db.CountryCurrencies, [
             nameof(CountryCurrency.CurrencyId), 
             nameof(CountryCurrency.CountryId), 
+            nameof(CountryCurrency.Country), 
             nameof(CountryCurrency.Currency), 
             nameof(CountryCurrency.Timestamp)]);
         

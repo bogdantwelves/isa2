@@ -126,9 +126,9 @@ public static class GetRandom{
         if (t == typeof(short)) return Int16();
         if (t == typeof(int)) return Int32();
         if (t == typeof(long)) return Int64();
-        if (t == typeof(TimeSpan)) return TimeSpan();
-        if (t == typeof(Guid)) return Guid();
-        throw new NotSupportedException($"Type {t} is not supported.");
+        //if (t == typeof(TimeSpan)) return TimeSpan();
+        //if (t == typeof(Guid)) return Guid();
+        return null;
     }
 }
 
